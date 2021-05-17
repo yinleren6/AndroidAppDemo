@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="activity">Activity</string>
+    <string name="service">Service</string>
+    <string name="broadcast_receivers">Broadcast Receivers</string>
+    <string name="content_provider">Content Provider</string>
+</resources>
