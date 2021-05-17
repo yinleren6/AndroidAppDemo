@@ -51,5 +51,7 @@ public class Service_Activitty extends AppCompatActivity {
         startService(new Intent(getBaseContext(), Service_Service.class));
     }
 
-
+    public void finish(View view) {
+        this.finish();
+    }
 }

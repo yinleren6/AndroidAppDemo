@@ -4,4 +4,11 @@
     <string name="service">Service</string>
     <string name="broadcast_receivers">Broadcast Receivers</string>
     <string name="content_provider">Content Provider</string>
+    <string name="finish">finish()</string>
+    <string name="stop_service">停止服务</string>
+    <string name="start_service">启动服务</string>
+    <string name="bindservice">BindService</string>
+    <string name="bind">Bind</string>
+    <string name="unbind">UnBind</string>
+    <string name="startservice">StartService</string>
 </resources>

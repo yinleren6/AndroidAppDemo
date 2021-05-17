@@ -34,4 +34,8 @@ public class MainActivity extends AppCompatActivity {
     public void c4(View view) {
 
     }
+
+    public void finish(View view) {
+        this.finish();
+    }
 }

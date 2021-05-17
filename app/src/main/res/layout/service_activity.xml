@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="176dp"
         android:onClick="b1"
-        android:text="启动服务"
+        android:text="@string/start_service"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toEndOf="@+id/textView5"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:onClick="b2"
-        android:text="停止服务"
+        android:text="@string/stop_service"
         app:layout_constraintStart_toEndOf="@+id/button1"
         app:layout_constraintTop_toTopOf="@+id/button1" />
 
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="124dp"
         android:onClick="finish"
-        android:text="finish()"
+        android:text="@string/finish"
         app:icon="@drawable/abc_vector_test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:text="StartService"
+        android:text="@string/startservice"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button1" />
 
@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="BindService"
+        android:text="@string/bindservice"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/button7" />
 
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="Bind"
+        android:text="@string/bind"
         app:layout_constraintStart_toStartOf="@+id/button1"
         app:layout_constraintTop_toBottomOf="@+id/button1" />
 
@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:text="UnBind"
+        android:text="@string/unbind"
         app:layout_constraintStart_toEndOf="@+id/button7"
         app:layout_constraintTop_toTopOf="@+id/button7" />
 
