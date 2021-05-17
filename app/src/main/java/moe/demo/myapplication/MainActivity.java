@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void c2(View view) {
-        i.setClass(this, Service_Service.class);
+        i.setClass(this, Service_Activitty.class);
         startActivity(i);
     }
 
