@@ -1,15 +1,13 @@
 package moe.demo.myapplication;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class A_back_Activitty extends AppCompatActivity {
+public class Activity_FeedBack_Activitty extends AppCompatActivity {
     Intent i;
     EditText nameInput;
     EditText pwdInput;
@@ -29,7 +27,7 @@ public class A_back_Activitty extends AppCompatActivity {
         String name = nameInput.getText().toString();
         String pwd = pwdInput.getText().toString();
 
-        i.setClass(this, A_back_Activitty.class);
+        i.setClass(this, Activity_FeedBack_Activitty.class);
         i.putExtra("name", name).putExtra("pwd", pwd);
         setResult(1, i);
         finish();
@@ -41,7 +39,7 @@ public class A_back_Activitty extends AppCompatActivity {
         bundle = new Bundle();
         bundle.putString("name", name);
         bundle.putString("pwd", pwd);
-        i.setClass(this, A_back_Activitty.class);
+        i.setClass(this, Activity_FeedBack_Activitty.class);
         i.putExtras(bundle);
         setResult(1, i);
         finish();

@@ -23,12 +23,12 @@ public class Activity_Activitty extends AppCompatActivity {
 
     public void b1(View view) {
         Log.i("aaaa", "按了按钮2");
-        i.setClass(this, A_back_Activitty.class);
+        i.setClass(this, Activity_FeedBack_Activitty.class);
         startActivity(i);
     }
 
     public void b2(View view) {
-        i.setClass(this, A_back_Activitty.class);
+        i.setClass(this, Activity_FeedBack_Activitty.class);
         startActivityForResult(i, 1);
     }
 

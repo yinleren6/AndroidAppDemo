@@ -12,13 +12,14 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Activitty"></activity>
-        <activity android:name=".A_back_Activitty"></activity>
-        <activity android:name=".B_Activitty"></activity>
+        <activity android:name=".Activity_Activitty" />
+        <activity android:name=".Activity_FeedBack_Activitty" />
+        <activity android:name=".Service_Activitty" />
+
+        <service android:name=".Service_Service" />
     </application>
 
 </manifest>
