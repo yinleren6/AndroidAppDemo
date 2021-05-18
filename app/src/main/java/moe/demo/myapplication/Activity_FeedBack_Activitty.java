@@ -16,7 +16,7 @@ public class Activity_FeedBack_Activitty extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_a_fallback);
+        setContentView(R.layout.activity_feedback);
         this.setTitle("Activity跳转");
         i = new Intent();
         nameInput = findViewById(R.id.editTextTextPersonName);

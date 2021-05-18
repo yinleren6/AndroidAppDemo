@@ -1,13 +1,13 @@
 package moe.demo.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
+public class MainActivity extends AppCompatActivity {
+    final String TAG = "TAG_Main_Activity";
     Intent i;
 
     @Override
@@ -17,17 +17,22 @@ public class MainActivity extends AppCompatActivity {
         i = new Intent();
     }
 
-    public void c1(View view) {
+    public void act(View view) {
+
         i.setClass(this, Activity_Activitty.class);
         startActivity(i);
     }
 
-    public void c2(View view) {
+    public void ser(View view) {
+
         i.setClass(this, Service_Activitty.class);
         startActivity(i);
     }
 
-    public void c3(View view) {
+    public void bro(View view) {
+
+        i.setClass(this, Broadcast_Activity.class);
+        startActivity(i);
 
     }
 

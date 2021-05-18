@@ -22,7 +22,7 @@ public class Activity_Activitty extends AppCompatActivity {
     }
 
     public void b1(View view) {
-        Log.i("aaaa", "按了按钮2");
+
         i.setClass(this, Activity_FeedBack_Activitty.class);
         startActivity(i);
     }

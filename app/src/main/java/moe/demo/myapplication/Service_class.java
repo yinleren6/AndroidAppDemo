@@ -7,20 +7,21 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 
-public class Service_Service extends Service {
+public class Service_class extends Service {
     Binder binder = new Binder();
+    final String TAG = "TAG_Service_Class";
 
     @Override
     public void onCreate() {
         Toast.makeText(this, "onCreate", Toast.LENGTH_LONG).show();
-        Log.i("TAG", "onCreate");
+        Log.i(TAG, "onCreate");
         super.onCreate();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Toast.makeText(this, "onStartCommand", Toast.LENGTH_LONG).show();
-        Log.i("TAG", "onStartCommand");
+        Log.i(TAG, "onStartCommand");
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -28,21 +29,21 @@ public class Service_Service extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         Toast.makeText(this, "onBind", Toast.LENGTH_LONG).show();
-        Log.i("TAG", "onBind");
+        Log.i(TAG, "onBind");
         return null;
     }
 
     @Override
     public boolean onUnbind(Intent intent) {
         Toast.makeText(this, "onUnbind", Toast.LENGTH_LONG).show();
-        Log.i("TAG", "onUnbind");
+        Log.i(TAG, "onUnbind");
         return super.onUnbind(intent);
     }
 
     @Override
     public void onRebind(Intent intent) {
         Toast.makeText(this, "onRebind", Toast.LENGTH_LONG).show();
-        Log.i("TAG", "onRebind");
+        Log.i(TAG, "onRebind");
         super.onRebind(intent);
     }
 
@@ -50,7 +51,7 @@ public class Service_Service extends Service {
     @Override
     public void onDestroy() {
         Toast.makeText(this, "onDestroy", Toast.LENGTH_LONG).show();
-        Log.i("TAG", "onDestroy");
+        Log.i(TAG, "onDestroy");
         super.onDestroy();
     }
 

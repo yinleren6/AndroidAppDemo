@@ -18,8 +18,60 @@
         <activity android:name=".Activity_Activitty" />
         <activity android:name=".Activity_FeedBack_Activitty" />
         <activity android:name=".Service_Activitty" />
+        <activity android:name=".Broadcast_Activity" />
 
-        <service android:name=".Service_Service" />
+        <service android:name=".Service_class" />
+
+        <receiver android:name=".Broadcast_Receiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="moe.demo.broadcast1000" />
+
+            </intent-filter>
+            <intent-filter android:priority="500">
+                <action android:name="moe.demo.broadcast500" />
+
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="moe.demo.broadcast" />
+                <action android:name="moe.demo.broadcast.order" />
+
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".Broadcast_Receiver_high_permission">
+            <intent-filter android:priority="1000">
+                <action android:name="moe.demo.broadcast" />
+                <action android:name="moe.demo.broadcast.order" />
+
+            </intent-filter>
+        </receiver>  <receiver android:name=".Broadcast_Receiver_high_permission2">
+            <intent-filter android:priority="1000">
+                <action android:name="moe.demo.broadcast" />
+                <action android:name="moe.demo.broadcast.order" />
+
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Broadcast_Receiver_low_permission">
+            <intent-filter android:priority="-1000">
+                <action android:name="moe.demo.broadcast" />
+                <action android:name="moe.demo.broadcast.order" />
+
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".FinalReceiver_Broadcast">
+            <intent-filter>
+                <action android:name="moe.demo.broadcast" />
+                <action android:name="moe.demo.broadcast.order" />
+
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>
