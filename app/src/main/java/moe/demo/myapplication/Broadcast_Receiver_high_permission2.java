@@ -21,7 +21,7 @@ public class Broadcast_Receiver_high_permission2 extends BroadcastReceiver {
             abortBroadcast();
             Log.i(TAG, " 终止了广播 " + data);
         }
-        Log.i(TAG, " 收到了广播 " + data);
+        Log.i(TAG, " 收到了广播 " + action+ data);
 
     }
 

@@ -17,10 +17,10 @@ public class Broadcast_Receiver_high_permission extends BroadcastReceiver {
         String action = intent.getAction();
 
         //修改
-        if ("modfy".equals(action)) {
+        if ("modify".equals(action)) {
             setResultData("这个广播被修改");
         }
-        Log.i(TAG, " 收到:" + data);
+        Log.i(TAG, " 收到并修改:" + action + data);
 
     }
 

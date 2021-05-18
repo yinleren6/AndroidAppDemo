@@ -11,7 +11,7 @@ public class FinalReceiver_Broadcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String data = getResultData();
-
-        Log.i(TAG, "收到：" + data);
+        String action = intent.getAction();
+        Log.i(TAG, "收到有序广播：" + action + data);//TODO  被修改 无法获取原始数据
     }
 }

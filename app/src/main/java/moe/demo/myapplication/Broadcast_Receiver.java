@@ -11,11 +11,14 @@ public class Broadcast_Receiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
-
         String data = intent.getStringExtra("key");
 
-        Log.i(TAG, "收到广播：" + action + "额外数据：" + data);
-
-
+        if ("android.intent.action.AIRPLANE_MODE".equals(action)) {
+            Log.i(TAG, "收到动态广播 ：飞行模式");
+        } else if ("android.intent.action_INSTALL_PACKAGE".equals(action)) {
+            Log.i(TAG, "收到动态广播 ：安装了新包");
+        } else {
+            Log.i(TAG, "：" + action + "额外数据：" + data);
+        }
     }
 }

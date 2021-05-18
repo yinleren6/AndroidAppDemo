@@ -14,8 +14,8 @@ public class Broadcast_Receiver_low_permission extends BroadcastReceiver {
 
         //获取广播的数据
         String data = getResultData();
-
-        Log.i(TAG, "低权限收到" + data);
+        String action = intent.getAction();
+        Log.i(TAG, "收到："+ action + data);
 
     }
 

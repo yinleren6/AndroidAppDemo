@@ -26,46 +26,40 @@
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
 
-            </intent-filter>
-            <intent-filter android:priority="1000">
-                <action android:name="moe.demo.broadcast1000" />
-
-            </intent-filter>
-            <intent-filter android:priority="500">
-                <action android:name="moe.demo.broadcast500" />
-
-            </intent-filter>
-
-            <intent-filter>
                 <action android:name="moe.demo.broadcast" />
-                <action android:name="moe.demo.broadcast.order" />
-
             </intent-filter>
+
+
         </receiver>
 
         <receiver android:name=".Broadcast_Receiver_high_permission">
             <intent-filter android:priority="1000">
-                <action android:name="moe.demo.broadcast" />
-                <action android:name="moe.demo.broadcast.order" />
-
-            </intent-filter>
-        </receiver>  <receiver android:name=".Broadcast_Receiver_high_permission2">
-            <intent-filter android:priority="1000">
-                <action android:name="moe.demo.broadcast" />
+                <action android:name="modify" />
                 <action android:name="moe.demo.broadcast.order" />
 
             </intent-filter>
         </receiver>
+        <receiver android:name=".Broadcast_Receiver_high_permission2">
+            <intent-filter android:priority="1000">
+                <action android:name="abort" />
+
+
+            </intent-filter>
+        </receiver>
+
         <receiver android:name=".Broadcast_Receiver_low_permission">
             <intent-filter android:priority="-1000">
-                <action android:name="moe.demo.broadcast" />
+                <action android:name="abort" />
+                <action android:name="modify" />
                 <action android:name="moe.demo.broadcast.order" />
 
             </intent-filter>
         </receiver>
         <receiver android:name=".FinalReceiver_Broadcast">
             <intent-filter>
-                <action android:name="moe.demo.broadcast" />
+                <action android:name="abort" />
+                <action android:name="modify" />
+
                 <action android:name="moe.demo.broadcast.order" />
 
             </intent-filter>
