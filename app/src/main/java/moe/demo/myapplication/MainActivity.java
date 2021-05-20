@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void ser(View view) {
 
-        i.setClass(this, Service_Activitty.class);
+        i.setClass(this, Service_Activity.class);
         startActivity(i);
     }
 

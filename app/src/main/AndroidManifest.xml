@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="moe.demo.myapplication">
-<uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,16 +12,68 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+
+        <activity android:name=".ImplicitWeb_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="about" />
+                <data android:scheme="javascript" />
+                <data android:scheme="inline" />
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="about" />
+                <data android:scheme="javascript" />
+                <data android:scheme="inline" />
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="text/html" />
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="application/xhtml+xml" />
+                <data android:mimeType="application/vnd.wap.xhtml+xml" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Implicit_Activity">
+            <intent-filter android:priority="888">
+                <action android:name="com.demo.myapplication.Active_Start" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="AAAAA" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Activity_Activitty" />
-        <activity android:name=".Activity_FeedBack_Activitty" />
-        <activity android:name=".Service_Activitty" />
+
+        <activity android:name=".Activity_FeedBack_Activity" />
+
+        <activity android:name=".Service_Activity" />
+
         <activity android:name=".Broadcast_Activity" />
+
         <activity android:name=".okhttp_Activity" />
 
         <service android:name=".Service_class" />
@@ -27,25 +81,20 @@
         <receiver android:name=".Broadcast_Receiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-
                 <action android:name="moe.demo.broadcast" />
             </intent-filter>
-
-
         </receiver>
 
         <receiver android:name=".Broadcast_Receiver_high_permission">
             <intent-filter android:priority="1000">
                 <action android:name="modify" />
                 <action android:name="moe.demo.broadcast.order" />
-
             </intent-filter>
         </receiver>
+
         <receiver android:name=".Broadcast_Receiver_high_permission2">
             <intent-filter android:priority="1000">
                 <action android:name="abort" />
-
-
             </intent-filter>
         </receiver>
 
@@ -54,20 +103,16 @@
                 <action android:name="abort" />
                 <action android:name="modify" />
                 <action android:name="moe.demo.broadcast.order" />
-
             </intent-filter>
         </receiver>
+
         <receiver android:name=".FinalReceiver_Broadcast">
             <intent-filter>
                 <action android:name="abort" />
                 <action android:name="modify" />
-
                 <action android:name="moe.demo.broadcast.order" />
-
             </intent-filter>
         </receiver>
 
-
     </application>
-
 </manifest>

@@ -7,7 +7,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Activity_FeedBack_Activitty extends AppCompatActivity {
+public class Activity_FeedBack_Activity extends AppCompatActivity {
     Intent i;
     EditText nameInput;
     EditText pwdInput;
@@ -27,7 +27,7 @@ public class Activity_FeedBack_Activitty extends AppCompatActivity {
         String name = nameInput.getText().toString();
         String pwd = pwdInput.getText().toString();
 
-        i.setClass(this, Activity_FeedBack_Activitty.class);
+        i.setClass(this, Activity_FeedBack_Activity.class);
         i.putExtra("name", name).putExtra("pwd", pwd);
         setResult(1, i);
         finish();
@@ -39,7 +39,7 @@ public class Activity_FeedBack_Activitty extends AppCompatActivity {
         bundle = new Bundle();
         bundle.putString("name", name);
         bundle.putString("pwd", pwd);
-        i.setClass(this, Activity_FeedBack_Activitty.class);
+        i.setClass(this, Activity_FeedBack_Activity.class);
         i.putExtras(bundle);
         setResult(1, i);
         finish();

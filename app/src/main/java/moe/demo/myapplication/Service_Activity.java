@@ -11,7 +11,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Service_Activitty extends AppCompatActivity {
+public class Service_Activity extends AppCompatActivity {
 
     final String TAG = "TAG_Service_Activitty";
 
