@@ -36,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void c4(View view) {
+    public void okhttp(View view) {
 
+        i.setClass(this, okhttp_Activity.class);
+        startActivity(i);
     }
 
     public void finish(View view) {
