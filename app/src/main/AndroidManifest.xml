@@ -12,8 +12,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-
-        <activity android:name=".ImplicitWeb_Activity">
+        <activity
+            android:name=".Activity_Launch_Mode"
+            android:launchMode="standard">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity_Launch_Mode1"
+            android:launchMode="standard" />
+        <activity
+            android:name=".Activity_Launch_Mode2"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".Activity_Launch_Mode3"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Activity_Launch_Mode4"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Dialog_Activity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".Implicit_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -27,7 +48,6 @@
                 <data android:scheme="inline" />
                 <data android:scheme="file" />
                 <data android:scheme="content" />
-
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -47,16 +67,19 @@
                 <data android:mimeType="application/xhtml+xml" />
                 <data android:mimeType="application/vnd.wap.xhtml+xml" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".Implicit_Activity">
             <intent-filter android:priority="888">
                 <action android:name="com.demo.myapplication.Active_Start" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="AAAAA" />
             </intent-filter>
+            <!-- <intent-filter android:priority="888"> -->
+            <!-- <action android:name="android.intent.action.DIAL" /> -->
 
+
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- <data android:scheme="tel" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -65,16 +88,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Activity_Activitty" />
-
+        <activity android:name=".Activity_Activitty">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Activity_FeedBack_Activity" />
-
-        <activity android:name=".Service_Activity" />
-
-        <activity android:name=".Broadcast_Activity" />
-
-        <activity android:name=".okhttp_Activity" />
+        <activity android:name=".Service_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Broadcast_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".okhttp_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
 
         <service android:name=".Service_class" />
 
@@ -84,20 +118,17 @@
                 <action android:name="moe.demo.broadcast" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".Broadcast_Receiver_high_permission">
             <intent-filter android:priority="1000">
                 <action android:name="modify" />
                 <action android:name="moe.demo.broadcast.order" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".Broadcast_Receiver_high_permission2">
             <intent-filter android:priority="1000">
                 <action android:name="abort" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".Broadcast_Receiver_low_permission">
             <intent-filter android:priority="-1000">
                 <action android:name="abort" />
@@ -105,7 +136,6 @@
                 <action android:name="moe.demo.broadcast.order" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".FinalReceiver_Broadcast">
             <intent-filter>
                 <action android:name="abort" />
@@ -113,6 +143,6 @@
                 <action android:name="moe.demo.broadcast.order" />
             </intent-filter>
         </receiver>
-
     </application>
+
 </manifest>

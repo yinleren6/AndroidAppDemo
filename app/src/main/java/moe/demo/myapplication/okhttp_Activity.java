@@ -206,4 +206,8 @@ public class okhttp_Activity extends AppCompatActivity {
             }
         });
     }
+
+    public void finish(View view) {
+        okhttp_Activity.this.finish();
+    }
 }

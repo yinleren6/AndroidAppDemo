@@ -10,7 +10,7 @@ public class Implicit_Activity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finish);
-        setTitle("隐式启动的活动");
+        setTitle("隐式启动");
     }
 
     public void finish(View view) {
