@@ -2,17 +2,20 @@ package moe.demo.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Activity_Launch_Mode extends AppCompatActivity {
+    private static final String TAG = "TAG_Activity_Launch_Mode";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_mode);
         this.setTitle("Launche Mode");
+        Log.i(TAG, "TaskID:" + getTaskId());
     }
 
 

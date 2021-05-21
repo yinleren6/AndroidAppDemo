@@ -32,11 +32,10 @@ public class Activity_Activitty extends AppCompatActivity {
     }
 
     public void b1(View view) {
-        Intent i = new Intent(this, Activity_FeedBack_Activity.class);
+
         //可选 传入参数
-        i.putExtra("db3", "这是第一个按钮传入的参数哟");
-        i.setClass(this, Activity_FeedBack_Activity.class);
-        startActivity(i);
+
+        Activity_FeedBack_Activity.activityStart(this, "key1", "这是参数一", "key2", "这是参数二");
     }
 
     public void b2(View view) {
@@ -73,6 +72,7 @@ public class Activity_Activitty extends AppCompatActivity {
         Intent intent = new Intent(this, Dialog_Activity.class);
         startActivity(intent);
     }
+
     //Activity 的四种启动模式
     public void b7(View view) {
         Intent i = new Intent(this, Activity_FeedBack_Activity.class);

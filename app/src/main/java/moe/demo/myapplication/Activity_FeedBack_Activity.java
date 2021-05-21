@@ -1,5 +1,6 @@
 package moe.demo.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,13 +30,23 @@ public class Activity_FeedBack_Activity extends AppCompatActivity {
         pwdInput = findViewById(R.id.editTextTextPassword);
         textView = findViewById(R.id.textView8);
         Intent intent = getIntent();
-        String data = intent.getStringExtra("db3");
-        boolean a = data != null;
+        String data1 = intent.getStringExtra("key1");
+        String data2 = intent.getStringExtra("key2");
+        boolean a = data1 != null;
         Log.i(TAG, "data != nul:" + a);
-        if (data != null) {
-            textView.setText(data);
+        if (data1 != null | data2 != null) {
+            textView.setText(data1 + "  " + data2);
         }
     }
+
+
+    public static void activityStart(Context context, String key1, String data1, String key2, String data2) {
+        Intent intent = new Intent(context, Activity_FeedBack_Activity.class);
+        intent.putExtra(key1, data1);
+        intent.putExtra(key2, data2);
+        context.startActivity(intent);
+    }
+
 
     public void b1(View view) {
         String name = nameInput.getText().toString();

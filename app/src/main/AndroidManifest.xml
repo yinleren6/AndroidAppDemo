@@ -115,8 +115,19 @@
         <receiver android:name=".Broadcast_Receiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="moe.demo.broadcast" />
             </intent-filter>
+            <!-- -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_INSTALL" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+            <!---->
+
         </receiver>
         <receiver android:name=".Broadcast_Receiver_high_permission">
             <intent-filter android:priority="1000">
