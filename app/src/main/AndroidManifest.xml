@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="moe.demo.myapplication">
+    package="moe.demo.demo">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+
+        <activity android:name="moe.demo.demo.Activity_open_noti" />
+        <activity android:name="moe.demo.demo.Activity_Notification" />
         <activity
-            android:name=".Activity_Launch_Mode"
+            android:name="moe.demo.demo.Activity_Launch_Mode"
             android:launchMode="standard">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity_Launch_Mode1"
+            android:name="moe.demo.demo.Activity_Launch_Mode1"
             android:launchMode="standard" />
         <activity
-            android:name=".Activity_Launch_Mode2"
+            android:name="moe.demo.demo.Activity_Launch_Mode2"
             android:launchMode="singleTop" />
         <activity
-            android:name=".Activity_Launch_Mode3"
+            android:name="moe.demo.demo.Activity_Launch_Mode3"
             android:launchMode="singleTask" />
         <activity
-            android:name=".Activity_Launch_Mode4"
+            android:name="moe.demo.demo.Activity_Launch_Mode4"
             android:launchMode="singleInstance" />
         <activity
-            android:name=".Dialog_Activity"
+            android:name="moe.demo.demo.Activity_Dialog"
             android:theme="@style/Theme.AppCompat.Dialog" />
-        <activity android:name=".Implicit_Activity">
+        <activity android:name="moe.demo.demo.Activity_Implicit">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -81,42 +85,42 @@
             <!-- <data android:scheme="tel" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="moe.demo.demo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Activitty">
+        <activity android:name="moe.demo.demo.Activity_Activitty">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_FeedBack_Activity" />
-        <activity android:name=".Service_Activity">
+        <activity android:name="moe.demo.demo.Activity_FeedBack" />
+        <activity android:name="moe.demo.demo.Activity_Service">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name=".Broadcast_Activity">
+        <activity android:name="moe.demo.demo.Activity_Broadcast">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name=".okhttp_Activity">
+        <activity android:name="moe.demo.demo.Activity_okhttp">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
 
-        <service android:name=".Service_class" />
+        <service android:name="moe.demo.demo.Class_Service" />
 
-        <receiver android:name=".Broadcast_Receiver">
+        <receiver android:name="moe.demo.demo.Class_Broadcast_Receiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-            <!-- -->
+            <!--  -->
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_INSTALL" />
             </intent-filter>
@@ -126,28 +130,36 @@
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
-            <!---->
+            <!--  -->
 
         </receiver>
-        <receiver android:name=".Broadcast_Receiver_high_permission">
+        <receiver
+            android:name="moe.demo.demo.Class_Broadcast_Receiver_high_permission"
+            android:permission="TODO">
             <intent-filter android:priority="1000">
                 <action android:name="modify" />
                 <action android:name="moe.demo.broadcast.order" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".Broadcast_Receiver_high_permission2">
+        <receiver
+            android:name="moe.demo.demo.Class_Broadcast_Receiver_high_permission2"
+            android:permission="TODO">
             <intent-filter android:priority="1000">
                 <action android:name="abort" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".Broadcast_Receiver_low_permission">
+        <receiver
+            android:name="moe.demo.demo.Class_Broadcast_Receiver_low_permission"
+            android:permission="TODO">
             <intent-filter android:priority="-1000">
                 <action android:name="abort" />
                 <action android:name="modify" />
                 <action android:name="moe.demo.broadcast.order" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".FinalReceiver_Broadcast">
+        <receiver
+            android:name="moe.demo.demo.Class_FinalReceiver_Broadcast"
+            android:permission="TODO">
             <intent-filter>
                 <action android:name="abort" />
                 <action android:name="modify" />

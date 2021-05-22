@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="124dp"
         android:onClick="finish"
-        android:text="finish()"
+        android:text="@string/finish"
         app:icon="@drawable/abc_vector_test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="b1"
-        android:text="standard"
+        android:text="@string/standard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="b2"
-        android:text="singleTop"
+        android:text="@string/singletop"
         app:layout_constraintStart_toStartOf="@+id/button28"
         app:layout_constraintTop_toBottomOf="@+id/button28" />
 
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="b3"
-        android:text="singleTask"
+        android:text="@string/singletask"
         app:layout_constraintStart_toStartOf="@+id/button29"
         app:layout_constraintTop_toBottomOf="@+id/button29" />
 
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="b4"
-        android:text="singleInstance"
+        android:text="@string/singleinstance"
         app:layout_constraintStart_toStartOf="@+id/button30"
         app:layout_constraintTop_toBottomOf="@+id/button30" />
 </androidx.constraintlayout.widget.ConstraintLayout>

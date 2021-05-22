@@ -15,7 +15,8 @@
         android:text="无返回结果带参数"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button2"
@@ -23,10 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="b2"
-        android:text="有返回结果"
+        android:text="@string/a1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+        app:layout_constraintTop_toBottomOf="@+id/button1"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button4"
@@ -39,7 +41,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView2"
@@ -49,7 +52,8 @@
         android:layout_marginTop="452dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button19"
@@ -57,11 +61,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="b3"
-        android:text="隐式启动"
+        android:text="@string/a21"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button21"
@@ -69,11 +74,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="b4"
-        android:text="隐式启动浏览器"
+        android:text="@string/a32"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button19" />
+        app:layout_constraintTop_toBottomOf="@+id/button19"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button22"
@@ -81,30 +87,33 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:onClick="b5"
-        android:text="拨号  10086"
+        android:text="@string/a22"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button21" />
+        app:layout_constraintTop_toBottomOf="@+id/button21"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="b6"
-        android:text="对话框式活动"
+        android:text="@string/a23"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button22" />
+        app:layout_constraintTop_toBottomOf="@+id/button22"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="b7"
-        android:text="Activity 的四种启动模式"
+        android:text="@string/s2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button25" />
+        app:layout_constraintTop_toBottomOf="@+id/button25"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
