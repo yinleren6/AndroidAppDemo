@@ -1,11 +1,14 @@
 package moe.demo.demo;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -16,6 +19,7 @@ public class Activity_Notification extends AppCompatActivity {
     PendingIntent pendingIntent;
     PendingIntent pendingIntent2;
     NotificationManager manager;
+    NotificationChannel mChannel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,7 +49,20 @@ public class Activity_Notification extends AppCompatActivity {
     }
 
     public void n1(View view) {
-        Notification notification = new NotificationCompat.Builder(this, "默认通知")
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            //创建通知渠道ID
+            String channelId = "default";
+//            //创建通知渠道名称
+            String channelName = "默认渠道1";
+//            //创建通知渠道重要性
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            mChannel = new NotificationChannel(channelId, channelName, importance);
+            manager.createNotificationChannel(mChannel);
+        }
+        Notification notification = new NotificationCompat.Builder(this, "default")
                 .setContentTitle("标题")                      //设置标题
                 .setContentText("内容文本")                     //设置通知内容
                 .setWhen(System.currentTimeMillis())        //设置通知发送时间
@@ -60,6 +77,7 @@ public class Activity_Notification extends AppCompatActivity {
                 //.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(  getResources(), R.mipmap.p1)))
                 .setPriority(NotificationCompat.PRIORITY_MAX)//通知优先级 从低到高 -2 ~ 2
                 .build();
+
         manager.notify(1, notification);
     }
 

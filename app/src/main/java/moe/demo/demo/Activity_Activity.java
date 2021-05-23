@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class Activity_Activitty extends AppCompatActivity {
+public class Activity_Activity extends AppCompatActivity {
 
     TextView textView2;
     private static final String TAG = "TAG_Activity_Activitty";
@@ -30,6 +30,7 @@ public class Activity_Activitty extends AppCompatActivity {
         this.setTitle("Activity_Activity");
 
         textView2 = findViewById(R.id.textView2);
+
     }
 
     public void b1(View view) {
@@ -98,7 +99,7 @@ public class Activity_Activitty extends AppCompatActivity {
 
     //在被因内存不足或其他原因而被回收时 会回调此方法用于零食保存数据
     @Override
-    public void onSaveInstanceState(  Bundle outState) {
+    public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         String data = "Something would be saved";
         outState.putString("data", data);
