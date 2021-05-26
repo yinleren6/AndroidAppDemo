@@ -13,6 +13,7 @@ public class Activity_Dialog extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog);
+        this.setTitle("Dialog");
         //在AndroidManifest.xml中设置 android:theme="@style/Theme.AppCompat.Dialog"
     }
 

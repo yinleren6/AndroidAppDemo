@@ -1,11 +1,11 @@
 package moe.demo.demo;
 
-public class Class_ListView_Item {
+public class ListItem2 {
     private String t1;
     private String t2;
     private int imageId;
 
-    public Class_ListView_Item(String t1, String t2, int imageId) {
+    public ListItem2(String t1, String t2, int imageId) {
         this.t1 = t1;
         this.t2 = t2;
         this.imageId = imageId;

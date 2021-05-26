@@ -21,7 +21,7 @@ public class Activity_Launch_Mode3 extends AppCompatActivity implements View.OnL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_mode1234);
-        this.setTitle("singleTask");
+        this.setTitle("启动模式: singleTask");
         Class_Activity_Manger.addActivity(this);
         button = findViewById(R.id.button4);
         button.setOnLongClickListener(this);

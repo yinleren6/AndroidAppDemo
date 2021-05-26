@@ -14,7 +14,7 @@ public class Activity_Launch_Mode extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_mode);
-        this.setTitle("Launche Mode");
+        this.setTitle("启动模式");
         Log.i(TAG, "TaskID:" + getTaskId());
     }
 

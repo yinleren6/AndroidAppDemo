@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -25,7 +24,7 @@ public class Activity_Notification extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-
+        this.setTitle("通知");
         //初始化 NotificationManager
         if (manager == null) {
             manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -42,7 +41,7 @@ public class Activity_Notification extends AppCompatActivity {
 
 
         intent = new Intent(this, Activity_open_noti.class);
-        intent2 = new Intent(this, MainActivity.class);
+        intent2 = new Intent(this, Activity_Service.class);
         pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         pendingIntent2 = PendingIntent.getActivity(this, 2, intent2, PendingIntent.FLAG_CANCEL_CURRENT);
 

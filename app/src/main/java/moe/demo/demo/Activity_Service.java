@@ -19,7 +19,7 @@ public class Activity_Service extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
-        this.setTitle("Service");
+        this.setTitle("服务");
 
     }
 

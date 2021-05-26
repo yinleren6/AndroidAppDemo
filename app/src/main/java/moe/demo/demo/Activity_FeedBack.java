@@ -23,7 +23,7 @@ public class Activity_FeedBack extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
-        this.setTitle("Activity跳转");
+        this.setTitle("Activity_FeedBack");
 
 
         nameInput = findViewById(R.id.editTextTextPersonName);
