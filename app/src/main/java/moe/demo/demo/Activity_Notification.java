@@ -29,15 +29,6 @@ public class Activity_Notification extends AppCompatActivity {
         if (manager == null) {
             manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         }
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            //创建通知渠道ID
-//            String channelId = "musicNotification";
-//            //创建通知渠道名称
-//            String channelName = "音乐播放器通知栏";
-//            //创建通知渠道重要性
-//            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-//            createNotificationChannel(context, channelId, channelName, importance);
-//        }
 
 
         intent = new Intent(this, Activity_open_noti.class);

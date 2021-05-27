@@ -53,8 +53,8 @@ public class Class_Service extends Service {
             manager.createNotificationChannel(mChannel);
         }
         Notification notification = new NotificationCompat.Builder(this, "default")
-                .setContentTitle("标题")                      //设置标题
-                .setContentText("内容文本")                     //设置通知内容
+                .setContentTitle("服务通知")                      //设置标题
+                .setContentText("服务正在运行")                     //设置通知内容
                 .setWhen(System.currentTimeMillis())        //设置通知发送时间
                 .setSmallIcon(R.mipmap.icon)                //小图标
                 .setContentIntent(pendingIntent)            //点击动作

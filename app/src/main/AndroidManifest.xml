@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
 
     <application
@@ -14,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Activity_Recycler_List"></activity>
+
+
+        <activity android:name=".Activity_Fragment" />
+        <activity android:name=".Activity_Recycler_List" />
         <activity android:name=".Activity_View" />
         <activity android:name=".Activity_open_noti" />
         <activity android:name=".Activity_Notification" />
@@ -79,13 +83,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="AAAAA" />
             </intent-filter>
-            <!-- <intent-filter android:priority="888"> -->
-            <!-- <action android:name="android.intent.action.DIAL" /> -->
 
-
-            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
-            <!-- <data android:scheme="tel" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -118,11 +116,15 @@
 
         <service android:name=".Class_Service" />
 
-        <receiver android:name=".Class_Broadcast_Receiver">
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-            <!--  -->
+        </receiver>
+        <receiver android:name=".Class_Broadcast_Receiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_INSTALL" />
             </intent-filter>
@@ -132,39 +134,59 @@
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
-            <!--  -->
-
-        </receiver>
-        <receiver
-            android:name=".Class_Broadcast_Receiver_high_permission"
-            android:permission="TODO">
-            <intent-filter android:priority="1000">
+            <intent-filter>
                 <action android:name="modify" />
-                <action android:name="moe.demo.broadcast.order" />
             </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".Class_Broadcast_Receiver_high_permission2"
-            android:permission="TODO">
-            <intent-filter android:priority="1000">
-                <action android:name="abort" />
+            <intent-filter>
+                <action android:name="common" />
             </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".Class_Broadcast_Receiver_low_permission"
-            android:permission="TODO">
-            <intent-filter android:priority="-1000">
-                <action android:name="abort" />
-                <action android:name="modify" />
-                <action android:name="moe.demo.broadcast.order" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".Class_FinalReceiver_Broadcast"
-            android:permission="TODO">
             <intent-filter>
                 <action android:name="abort" />
+            </intent-filter>  <intent-filter>
+                <action android:name="abort" />
+            </intent-filter>  <intent-filter>
+                <action android:name="abort" />
+            </intent-filter>  <intent-filter>
+                <action android:name="abort" />
+            </intent-filter>  <intent-filter>
+                <action android:name="abort" />
+            </intent-filter>
+
+
+        </receiver>
+        <receiver android:name=".Class_Broadcast_Receiver_high_permission">
+            <intent-filter android:priority="1000">
                 <action android:name="modify" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Class_Broadcast_Receiver_high_permission2">
+            <intent-filter android:priority="1000">
+                <action android:name="abort" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Class_Broadcast_Receiver_low_permission">
+            <intent-filter android:priority="-1000">
+                <action android:name="modify" />
+            </intent-filter>
+            <intent-filter android:priority="-1000">
+                <action android:name="common" />
+            </intent-filter>
+            <intent-filter android:priority="-1000">
+                <action android:name="abort" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Class_FinalReceiver_Broadcast">
+            <intent-filter>
+                <action android:name="abort" />
+
+            </intent-filter>
+            <intent-filter>
+
+                <action android:name="modify" />
+
+            </intent-filter>
+            <intent-filter>
+
                 <action android:name="moe.demo.broadcast.order" />
             </intent-filter>
         </receiver>

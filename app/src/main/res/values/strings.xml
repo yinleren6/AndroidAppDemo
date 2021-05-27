@@ -25,11 +25,11 @@
     <string name="bundle">Bundle</string>
     <string name="textview">TextView</string>
     <string name="http_baidu_com">http://baidu.com</string>
-    <string name="ass">使用高权限广播接收器修改广播内容(有序)</string>
-    <string name="fzwx">发送一条广播（无序）+额外信息</string>
+    <string name="ass">使用高权限广播接收器修改有序广播内容</string>
+    <string name="fzwx">发送一条标准广播 +额外信息</string>
     <string name="ddasd">使用高权限广播接收器终止广播</string>
     <string name="dtzc">动态注册一个广播接收器</string>
-    <string name="sdads">反注册</string>
+    <string name="sdads">取消注册</string>
     <string name="dhkhd">这是一个对话框主题的活动 并没有完全遮住上个活动</string>
     <string name="ddss">启动这个活动 上个活动只会pause 而启动普通活动还会onstop</string>
     <string name="button">Button</string>
@@ -43,4 +43,5 @@
     <string name="_3">3</string>
     <string name="_4">4</string>
     <string name="todo">TODO</string>
+    <string name="exit">退出</string>
 </resources>

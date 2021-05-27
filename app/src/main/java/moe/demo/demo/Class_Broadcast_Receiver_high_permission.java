@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 public class Class_Broadcast_Receiver_high_permission extends BroadcastReceiver {
 
@@ -18,9 +19,10 @@ public class Class_Broadcast_Receiver_high_permission extends BroadcastReceiver 
 
         //修改
         if ("modify".equals(action)) {
-            setResultData("这个广播被修改");
+            setResultData("广播被高权限修改");
+            Toast.makeText(context, "2高权限 收到广播: " + "action: " + action + " data: " + data, Toast.LENGTH_LONG).show();
+            Log.i(TAG, "高权限 收到广播: " + "action: " + action + " data: " + data);
         }
-        Log.i(TAG, " 收到并修改:" + action + data);
 
     }
 
