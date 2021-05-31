@@ -19,14 +19,16 @@ public class Activity_Data_Storage_SQLite extends AppCompatActivity implements V
     Button insert, upgrade, delete, query, ix, ux, dx, qx;
     EditText mText11, mText12, mText13, mText21, mText22, mText23, mText31, mText41;
     TextView textView;
+    SqliteHelper helper;
 
-    SqliteHelper helper = new SqliteHelper(this, "data3.db", null, 1);
     Toast mToast;
 
     public Activity_Data_Storage_SQLite() {
     }
 
+    //TODO 目前只有表操作 没有库操作
     protected void onCreate(Bundle savedInstanceState) {
+        helper = new SqliteHelper(this, "data3.db", null, 2);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sqlite);
         insert = findViewById(R.id.b_insert);
@@ -65,9 +67,8 @@ public class Activity_Data_Storage_SQLite extends AppCompatActivity implements V
             mToast.cancel();
         }
 
-
+        //插入
         if (v.getId() == R.id.b_insert) {
-//            插入
 
             SQLiteDatabase db = helper.getWritableDatabase();
             ContentValues values = new ContentValues();
@@ -77,69 +78,128 @@ public class Activity_Data_Storage_SQLite extends AppCompatActivity implements V
             db.insert("data003", null, values);
             values.clear();
             long row = db.insert("data003", null, values);
-            mToast.makeText(this, "插入 finished with code \"" + row + "\"", Toast.LENGTH_SHORT).show();
-            Log.d(TAG, "finished with code \"" + row + "\"");
-        } else if (v.getId() == R.id.b_upgrade) {
-            //更新
+
+
+            if (row == 0) {
+                mToast.makeText(this, "成功 finished with code  0", Toast.LENGTH_SHORT).show();
+
+            }
+            else {
+                Log.d(TAG, "finished with code \"" + row + "\"");
+            }
+        }
+
+        //更新
+        else if (v.getId() == R.id.b_upgrade) {
+
             SQLiteDatabase db = helper.getWritableDatabase();
             ContentValues values = new ContentValues();
-            if (mText21.getText() != null) {
 
+            // id
+            if (!mText21.getText().toString().equals("")) {
                 values.put("id", mText21.getText().toString());
-
-
             }
-            if (mText22.getText() != null) {
+            else {
+                mToast.makeText(this, "成功 finished with code  0", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "格式错误");
+                return;
+            }
+            // neme
+            if (!mText22.getText().toString().equals("")) {
                 values.put("name", mText22.getText().toString());
             }
-            if (mText23.getText() != null) {
+            // price
+            if (!mText23.getText().toString().equals("")) {
                 values.put("price", mText23.getText().toString());
             }
 
             int row = db.update("data003", values, "id=?", new String[]{mText21.getText().toString()});
-            values.clear();
-            mToast.makeText(this, "更新 finished with code \"" + row + "\"", Toast.LENGTH_SHORT).show();
-            Log.d(TAG, "finished with code \"" + row + "\"");
+            if (row == 0) {
+                mToast.makeText(this, "成功 finished with code  0", Toast.LENGTH_SHORT).show();
 
-            mToast.makeText(this, "无更新 ", Toast.LENGTH_SHORT).show();
-        } else if (v.getId() == R.id.b_delete) {
-            //删除
-            String id = mText31.getText().toString();
-            SQLiteDatabase db = helper.getWritableDatabase();
-            int row = db.delete("data003", "id=?", new String[]{id});
-            mToast.makeText(this, "删除 finished with code \"" + row + "\"", Toast.LENGTH_SHORT).show();
-
-            Log.d(TAG, "finished with code \"" + row + "\"");
-        } else if (v.getId() == R.id.b_query) {
-            //查询
-            textView.setText(null);
-            SQLiteDatabase db = helper.getWritableDatabase();
-            Cursor cursor = db.query("data003", null, null, null, null, null, null);
-            if (cursor.moveToFirst()) {
-                do {
-                    int id = cursor.getInt(cursor.getColumnIndex("id"));
-                    String name = cursor.getString(cursor.getColumnIndex("name"));
-                    int price = cursor.getInt(cursor.getColumnIndex("price"));
-                    Log.d(TAG, "-\nid -> " + id + "\tname -> " + name + "\tprice -> " + price);
-                    textView.setText(textView.getText() + "-\tid -> " + id + "\tname -> " + name + "\tprice -> " + price + "\n");
-                } while (cursor.moveToNext());
-                cursor.close();
-                mToast.makeText(this, "查询 finished", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Log.d(TAG, "Error with code \"" + row + "\"");
             }
 
 
-        } else if (v.getId() == R.id.b_1x) {
+        }
+
+        //删除
+        else if (v.getId() == R.id.b_delete) {
+            if (mText31.getText().toString().equals("")) {
+                mToast.makeText(this, "格式错误", Toast.LENGTH_SHORT).show();
+            }
+            else {
+
+                String id = mText31.getText().toString();
+                SQLiteDatabase db = helper.getWritableDatabase();
+                int row = db.delete("data003", "id=?", new String[]{id});
+
+                //                if (row == 0) {
+                //                    mToast.makeText(this, "成功 finished with code  0", Toast.LENGTH_SHORT).show();
+                //
+                //                }
+                //                else {
+                //                    Log.d(TAG, "Error with code \"" + row + "\"");
+                //                }
+
+
+            }
+        }
+
+        //查询
+        else if (v.getId() == R.id.b_query) {
+            String Inputid = mText41.getText().toString();
+            textView.setText("id\t\tname\t\tprice");
+            Log.d(TAG, "id\t\tname\t\tprice");
+            SQLiteDatabase db = helper.getWritableDatabase();
+            try {
+                Cursor cursor;
+                if (Inputid.equals("")) {
+
+                    cursor = db.query("data003", null, null, null, null, null, null);
+                }
+                else {
+                    cursor = db.rawQuery("select id,name,price from data003 where id=?", new String[]{Inputid});
+                }
+                if (cursor.moveToFirst()) {
+                    do {
+                        int id = cursor.getInt(cursor.getColumnIndex("id"));
+                        String name = cursor.getString(cursor.getColumnIndex("name"));
+                        int price = cursor.getInt(cursor.getColumnIndex("price"));
+                        Log.d(TAG, id + "\t" + name + "\t\t" + price);
+                        textView.setText(textView.getText() + "\n" + id + "\t" + name + "\t\t" + price);
+                    } while (cursor.moveToNext());
+                    cursor.close();
+                    mToast.makeText(this, "查询 finished", Toast.LENGTH_SHORT).show();
+                }
+            } catch (Exception e) {
+                Log.e(TAG, e.toString());
+                mToast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+        else if (v.getId() == R.id.b_1x) {
             mText11.setText(null);
             mText12.setText(null);
             mText13.setText(null);
-        } else if (v.getId() == R.id.b_2x) {
+        }
+
+        else if (v.getId() == R.id.b_2x) {
             mText21.setText(null);
             mText22.setText(null);
             mText23.setText(null);
-        } else if (v.getId() == R.id.b_3x) {
+        }
+
+        else if (v.getId() == R.id.b_3x) {
             mText31.setText(null);
-        } else if (v.getId() == R.id.b_4x) {
+        }
+
+        else if (v.getId() == R.id.b_4x) {
             mText41.setText(null);
         }
     }
 }
+
