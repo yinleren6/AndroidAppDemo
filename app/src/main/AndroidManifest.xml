@@ -15,8 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-
-
+        <activity android:name=".webView"></activity>
+        <activity android:name=".Activity_Data_Storage" />
+        <activity android:name=".Activity_Data_Storage_SQLite" />
         <activity android:name=".Activity_Fragment" />
         <activity android:name=".Activity_Recycler_List" />
         <activity android:name=".Activity_View" />
@@ -83,7 +84,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="AAAAA" />
             </intent-filter>
-
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -141,18 +141,20 @@
                 <action android:name="common" />
             </intent-filter>
             <intent-filter>
-                <action android:name="abort" />
-            </intent-filter>  <intent-filter>
-                <action android:name="abort" />
-            </intent-filter>  <intent-filter>
-                <action android:name="abort" />
-            </intent-filter>  <intent-filter>
-                <action android:name="abort" />
-            </intent-filter>  <intent-filter>
+                <action android:name="a" />
+            </intent-filter>
+            <intent-filter>
                 <action android:name="abort" />
             </intent-filter>
-
-
+            <intent-filter>
+                <action android:name="abort" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="abort" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="abort" />
+            </intent-filter>
         </receiver>
         <receiver android:name=".Class_Broadcast_Receiver_high_permission">
             <intent-filter android:priority="1000">
@@ -178,15 +180,11 @@
         <receiver android:name=".Class_FinalReceiver_Broadcast">
             <intent-filter>
                 <action android:name="abort" />
-
             </intent-filter>
             <intent-filter>
-
                 <action android:name="modify" />
-
             </intent-filter>
             <intent-filter>
-
                 <action android:name="moe.demo.broadcast.order" />
             </intent-filter>
         </receiver>

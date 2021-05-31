@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         i = new Intent();
 
+
         list = new ArrayList<>();
         list.add(new ListItem2("Activity", "活动测试", R.drawable.icon));
         list.add(new ListItem2("Service", "服务测试", R.drawable.icon));
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new ListItem2("okhttp", "网络测试", R.drawable.icon));
         list.add(new ListItem2("Fragment", "一种碎片化布局", R.drawable.icon));
         list.add(new ListItem2("Notification", "通知测试", R.drawable.icon));
-        list.add(new ListItem2(" ", " ", R.drawable.icon));
+        list.add(new ListItem2("数据存储方案", "三种数据持久化技术", R.drawable.icon));
 
 
         listView = findViewById(R.id.listView);
@@ -60,16 +61,16 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(i);
                     break;
                 case 5:
-                        i.setClass(MainActivity.this, Activity_Fragment.class);
-                        startActivity(i);
+                    i.setClass(MainActivity.this, Activity_Fragment.class);
+                    startActivity(i);
                     break;
                 case 6:
                     i.setClass(MainActivity.this, Activity_Notification.class);
                     startActivity(i);
                     break;
                 case 7:
-//                        i.setClass(MainActivity.this, Activity_Notification.class);
-//                        startActivity(i);
+                    i.setClass(MainActivity.this, Activity_Data_Storage.class);
+                    startActivity(i);
                     break;
             }
         });

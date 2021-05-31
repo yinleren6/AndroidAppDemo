@@ -22,11 +22,29 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class Activity_okhttp extends AppCompatActivity {
+    private static final MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
+    final String a = "0";
     private final String TAG = "TAG_OkHttp_测试";
     private final OkHttpClient client = new OkHttpClient();
-    private static final MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
     TextView textView;
-    final String a = "0";
+    final Callback callback_get =
+            new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
+                    Log.e(TAG, "onFailure: " + e.getMessage());
+                }
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                    String a = Objects.requireNonNull(response.body()).string();
+                    Log.i(TAG, "onResponse: " + a);
+
+                    Activity_okhttp.this.runOnUiThread(() -> {
+                        Toast.makeText(Activity_okhttp.this, "T T T T T" + a, Toast.LENGTH_LONG).show();
+                        textView.setText(a);
+                    });
+                }
+            };
     EditText editText;
     String url;
 
@@ -41,6 +59,7 @@ public class Activity_okhttp extends AppCompatActivity {
         textView.setOnClickListener(v -> textView.setText(a));
         url = editText.getText().toString();
     }
+    //===========post
 
     //============get
     public void get(View view) {
@@ -54,40 +73,11 @@ public class Activity_okhttp extends AppCompatActivity {
         Call call = client.newCall(request);
         call.enqueue(callback_get);
     }
-    //===========post
 
     //POST方式提交String
     public void post(View view) {
         url = "https://baidu.com";
         post1(url);
-    }
-
-
-
-    //POST方式提交String
-    void post1(String url) throws NullPointerException {
-        String re = "xxxxxx";
-        RequestBody requestBody = RequestBody.Companion.create(mediaType, re);
-        Request request = new Request.Builder()
-                .url(url)
-                .post(requestBody)
-                .build();
-        Log.i(TAG, requestBody.toString());
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure( Call call,  IOException e) {
-                Log.e(TAG, "onFailure: " + e.getMessage());
-            }
-
-            @Override
-            public void onResponse( Call call,  Response response) throws IOException {
-                Headers headers = response.headers();
-                for (int i = 0; i < headers.size(); i++) {
-                    Log.d(TAG, headers.name(i) + ":" + headers.value(i));
-                }
-                Log.d(TAG, "onResponse: " + Objects.requireNonNull(response.body()).string());
-            }
-        });
     }
 
 
@@ -185,24 +175,31 @@ public class Activity_okhttp extends AppCompatActivity {
 //        });
 //    }
 
-    final Callback callback_get =
-            new Callback() {
-                @Override
-                public void onFailure(  Call call, IOException e) {
-                    Log.e(TAG, "onFailure: " + e.getMessage());
-                }
+    //POST方式提交String
+    void post1(String url) throws NullPointerException {
+        String re = "xxxxxx";
+        RequestBody requestBody = RequestBody.Companion.create(re, mediaType);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
+        Log.i(TAG, requestBody.toString());
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.e(TAG, "onFailure: " + e.getMessage());
+            }
 
-                @Override
-                public void onResponse(   Call call, Response response) throws IOException {
-                    String a = Objects.requireNonNull(response.body()).string();
-                    Log.i(TAG, "onResponse: " + a);
-
-                    Activity_okhttp.this.runOnUiThread(() -> {
-                        Toast.makeText(Activity_okhttp.this, "T T T T T" + a, Toast.LENGTH_LONG).show();
-                        textView.setText(a);
-                    });
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Headers headers = response.headers();
+                for (int i = 0; i < headers.size(); i++) {
+                    Log.d(TAG, headers.name(i) + ":" + headers.value(i));
                 }
-            };
+                Log.d(TAG, "onResponse: " + Objects.requireNonNull(response.body()).string());
+            }
+        });
+    }
 
     public void finish(View view) {
         this.finish();
