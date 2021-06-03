@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">没钱钱</string>
+    <string name="app_name">没有钱钱</string>
     <string name="activity">Activity</string>
     <string name="service">Service</string>
     <string name="broadcast_receivers">Broadcast Receivers</string>

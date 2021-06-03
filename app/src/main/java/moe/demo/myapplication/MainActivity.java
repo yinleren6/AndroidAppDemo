@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         list.add(new ListItem2("Data Storage", "三种数据持久化技术", R.drawable.icon));
         list.add(new ListItem2("Runtime Permission", "运行时权限", R.drawable.icon));
         list.add(new ListItem2("ContentProvider", "内容提供器", R.drawable.icon));
+        list.add(new ListItem2("Camera&Album", "照片相机", R.drawable.icon));
+        list.add(new ListItem2("Music&Video", "音乐视频", R.drawable.icon));
 
 
         listView = findViewById(R.id.listView);
@@ -80,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 9:
                     i.setClass(MainActivity.this, Activity_ContentProvider_read.class);
+                    startActivity(i);
+                    break;
+                case 10:
+                    i.setClass(MainActivity.this, Activity_CameraAlbum.class);
+                    startActivity(i);
+                    break;
+                case 11:
+                    i.setClass(MainActivity.this, Activity_MediaPlayer.class);
                     startActivity(i);
                     break;
             }
