@@ -7,15 +7,91 @@
     android:orientation="vertical"
     tools:context=".Activity_MusicPlayer">
 
-    <Button
-        android:id="@+id/button34"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="音频" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button35"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button35"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Loop" />
+
+            <Button
+                android:id="@+id/button34"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Play" />
+
+            <Button
+                android:id="@+id/button38"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Stop" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="视频" />
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="网络" />
+
+        <Button
+            android:id="@+id/button39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="本地" />
+
+        <Button
+            android:id="@+id/button40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="res" />
+
+    </LinearLayout>
+
 </LinearLayout>
