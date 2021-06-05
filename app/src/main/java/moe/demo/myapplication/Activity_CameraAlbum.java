@@ -14,6 +14,7 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -47,6 +48,9 @@ public class Activity_CameraAlbum extends AppCompatActivity implements View.OnCl
         findViewById(R.id.button27).setOnClickListener(this);
         findViewById(R.id.button32).setOnClickListener(this);
         mImageView = findViewById(R.id.imageView);
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN
+                | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
     }
 
     @Override
