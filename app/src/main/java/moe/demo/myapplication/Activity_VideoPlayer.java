@@ -58,7 +58,13 @@ public class Activity_VideoPlayer extends AppCompatActivity {
             //              mVideoView.resume(); //重新播放
             //            mVideoView.suspend();  //释放资源 一般在OnDestory中使用
         }
-
+        // 给Spinner 设置数据
+        //        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        //        // 建立数据源
+        //        String[] mItems = {"Item 1", "Item 2", "Item 3", "Item 4"};
+        //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mItems);
+        //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //        spinner.setAdapter(adapter);
 
     }
 

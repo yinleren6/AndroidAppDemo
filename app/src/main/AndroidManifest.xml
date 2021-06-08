@@ -20,6 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Activity_XML"></activity>
         <activity android:name=".Activity_VideoPlayer" />
         <activity android:name=".Activity_MusicPlayer" />
         <activity android:name=".Activity_MediaPlayer" />
@@ -40,7 +41,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
 
         <activity android:name=".Activity_ContentProvider_read" />
         <activity android:name=".RuntimePermission" />

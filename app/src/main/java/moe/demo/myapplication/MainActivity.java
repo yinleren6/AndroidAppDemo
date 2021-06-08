@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new ListItem2("Camera&Album", "照片相机", R.drawable.icon));
         list.add(new ListItem2("Music&Video", "音乐视频", R.drawable.icon));
         list.add(new ListItem2("WebView", "浏览网页", R.drawable.icon));
+        list.add(new ListItem2("XML/JSON", "数据解析", R.drawable.icon));
 
 
         listView = findViewById(R.id.listView);
@@ -92,8 +93,13 @@ public class MainActivity extends AppCompatActivity {
                 case 11:
                     i.setClass(MainActivity.this, Activity_MediaPlayer.class);
                     startActivity(i);
-                    break;case 12:
+                    break;
+                case 12:
                     i.setClass(MainActivity.this, Activity_webView.class);
+                    startActivity(i);
+                    break;
+                case 13:
+                    i.setClass(MainActivity.this, Activity_XML.class);
                     startActivity(i);
                     break;
             }

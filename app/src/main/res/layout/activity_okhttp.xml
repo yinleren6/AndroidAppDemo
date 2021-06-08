@@ -28,13 +28,20 @@
                 android:inputType="textPersonName"
                 android:text="@string/http_baidu_com" />
 
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="okhttp" />
+
             <Button
                 android:id="@+id/button15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 android:layout_weight="1"
-                android:onClick="post1"
+                android:onClick="postString"
 
 
                 android:text="Post1 String" />
@@ -74,13 +81,27 @@
 
                 android:text="Get" />
 
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HttpURLConnection" />
+
             <Button
                 android:id="@+id/button43"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="http"
-                android:text="Android get和post" />
+                android:text="get" />
+
+            <Button
+                android:id="@+id/button48"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Post" />
 
             <Button
                 android:id="@+id/button26"
