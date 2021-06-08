@@ -71,8 +71,22 @@ public class Activity_okhttp extends AppCompatActivity implements View.OnClickLi
     //============get
     public void get(View view) {
         /*使用封装类*/
-        String responses = HttpUtil.sendHttpRequest(editLink);
-        Log.i(TAG, "封装类测试" + responses);
+        HttpUtil.sendOkHttpRequest(editLink, new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.i(TAG, "onFailure: " + e.getMessage());
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.i(TAG, "okhttp封装类测试" + response.body().string());
+
+            }
+        });
+
+
 
 
         /*不使用封装类*/
@@ -179,10 +193,10 @@ public class Activity_okhttp extends AppCompatActivity implements View.OnClickLi
             public void onResponse(Call call, Response response) throws IOException {
                 Headers headers = response.headers();
                 for (int i = 0; i < headers.size(); i++) {
-                    Log.d(TAG, headers.name(i) + ":" + headers.value(i));
+                    Log.d(TAG, "头 -> "+headers.name(i) + ":" + headers.value(i));
                 }
                 String onResponse = Objects.requireNonNull(response.body()).string();
-                Log.d(TAG, "onResponse: " + onResponse);
+                Log.i(TAG, "onResponse: " + onResponse);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -229,8 +243,18 @@ public class Activity_okhttp extends AppCompatActivity implements View.OnClickLi
             public void run() {
                 /*使用封装类*/
                 try {
-                    String responses = HttpUtil.sendHttpRequest2(editLink);
-                    Log.i(TAG, "封装类测试：" + responses);
+                    HttpUtil.sendHttpRequest2(editLink, new HttpCallbackListener() {
+                        @Override
+                        public void OnFinish(String response) {
+                            Log.i(TAG, "封装类测试：" + response);
+                        }
+
+                        @Override
+                        public void OnError(Exception e) {
+                            //
+                        }
+                    });
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
