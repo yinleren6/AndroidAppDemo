@@ -41,7 +41,7 @@ public class Activity_okhttp extends AppCompatActivity implements View.OnClickLi
     //TODO 自动完成文本框
     String editLink;
     URL url;
-    ;
+
 
 
     public Activity_okhttp() throws MalformedURLException {

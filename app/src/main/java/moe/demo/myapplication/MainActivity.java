@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<>();
         list.add(new ListItem2("Activity", "活动测试", R.drawable.icon));
         list.add(new ListItem2("Service", "服务测试", R.drawable.icon));
+
         list.add(new ListItem2("Broadcast", "广播接收器测试", R.drawable.icon));
         list.add(new ListItem2("RecyclerAdapter", "一种更强大的 ListView", R.drawable.icon));
         list.add(new ListItem2("okhttp", "网络测试", R.drawable.icon));
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         list.add(new ListItem2("Music&Video", "音乐视频", R.drawable.icon));
         list.add(new ListItem2("WebView", "浏览网页", R.drawable.icon));
         list.add(new ListItem2("XML/JSON", "数据解析", R.drawable.icon));
-
+        list.add(new ListItem2("Service", "服务demo", R.drawable.icon));
+        list.add(new ListItem2("Service", "百度地图SDK", R.drawable.icon));
 
         listView = findViewById(R.id.listView);
         ListAdapter2 adapter = new ListAdapter2(this, R.layout.listview_adapter2, list);
@@ -100,6 +102,14 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 13:
                     i.setClass(MainActivity.this, Activity_XML.class);
+                    startActivity(i);
+                    break;
+                case 14:
+                    i.setClass(MainActivity.this, Download_Demo.class);
+                    startActivity(i);
+                    break;
+                case 15:
+                    i.setClass(MainActivity.this, Activity_Baidu_Map_SKD.class);
                     startActivity(i);
                     break;
             }
