@@ -49,12 +49,22 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir:'libs')
+
+    //glide 是一个强大的图片加载库
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    //okhttp3 是一个优秀的网络通信库
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    //一个高性能json解析器 能自动把简单的 Java Object 序列化/反序列化
     implementation("com.google.code.gson:gson:2.8.6")
+    //质感设计
+    implementation 'com.google.android.material:material:1.2.1'
+    //fragment 碎片
+    implementation 'androidx.fragment:fragment:1.2.5'
+
+    //******************************************************
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.fragment:fragment:1.2.5'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

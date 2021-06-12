@@ -84,7 +84,7 @@ public class DownloadService extends Service {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             String channelId = "download";//创建通知渠道ID
             String channelName = "下载通知";//创建通知渠道名称
-            int importance = NotificationManager.IMPORTANCE_HIGH;//创建通知渠道重要性
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;//创建通知渠道重要性
             mChannel = new NotificationChannel(channelId, channelName, importance);
             manager.createNotificationChannel(mChannel);
             builder = new NotificationCompat.Builder(getBaseContext(), channelId);
@@ -119,6 +119,8 @@ public class DownloadService extends Service {
                     .setWhen(System.currentTimeMillis())//
                     .setSmallIcon(R.mipmap.icon)//
                     .setContentIntent(pi)//
+                    .setSound(null)//
+                    .setNotificationSilent()
                     .setProgress(100, progress, false)//
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.icon))//
                     .build();//

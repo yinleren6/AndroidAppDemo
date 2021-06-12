@@ -12,17 +12,17 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class Class_Left_Frogment extends Fragment {
 
+    boolean a = true;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.left, container, false);
     }
 
-    boolean a = true;
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         //获取按钮对象
-        Button button = (Button) getActivity().findViewById(R.id.button13);
+        Button button = getActivity().findViewById(R.id.button13);
         //给按钮设置点击监听
         button.setOnClickListener(v -> {
             //碎片管理器
@@ -33,7 +33,8 @@ public class Class_Left_Frogment extends Fragment {
             if (a) {
                 transaction.replace(R.id.framelayout, new Class_Right_Frogment2());
                 a = false;
-            } else {
+            }
+            else {
                 transaction.replace(R.id.framelayout, new Class_Right_Frogment());
                 a = true;
             }

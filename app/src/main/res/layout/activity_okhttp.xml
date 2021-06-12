@@ -7,119 +7,112 @@
 <!--    https://huxiaomu.blog.csdn.net/article/details/102725040-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/editTextTextPersonName2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/q1"
-                android:inputType="textPersonName"
-                android:text="@string/http_baidu_com" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="okhttp" />
-
-            <Button
-                android:id="@+id/button15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_weight="1"
-                android:onClick="postString"
+            android:layout_height="match_parent">
 
 
-                android:text="Post1 String" />
 
-            <Button
-                android:id="@+id/button16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                android:layout_weight="1"
+                    <EditText
+                        android:id="@+id/editTextTextPersonName2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-                android:text="Post2" />
+                        android:ems="10"
+                        android:hint="@string/q1"
+                        android:inputType="textPersonName"
+                        android:text="@string/http_baidu_com" />
 
-            <Button
-                android:id="@+id/button17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="okhttp" />
 
-                android:layout_weight="1"
-                android:text="Post3" />
+                    <Button
+                        android:id="@+id/button15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-            <Button
-                android:id="@+id/button18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                        android:onClick="postString"
 
-                android:layout_weight="1"
-                android:text="Post4表单" />
 
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                        android:text="Post1 String" />
 
-                android:layout_weight="1"
-                android:onClick="get"
+                    <Button
+                        android:id="@+id/button16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-                android:text="Get" />
+                        android:text="Post2" />
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="HttpURLConnection" />
+                    <Button
+                        android:id="@+id/button17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-            <Button
-                android:id="@+id/button43"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="get" />
+                        android:text="Post3" />
 
-            <Button
-                android:id="@+id/button48"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Post" />
+                    <Button
+                        android:id="@+id/button18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-            <Button
-                android:id="@+id/button26"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                        android:text="Post4表单" />
 
-                android:layout_weight="1"
+                    <Button
+                        android:id="@+id/button14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-                android:onClick="finish"
-                android:text="@string/finish" />
+                        android:onClick="get"
 
-        </LinearLayout>
+                        android:text="Get" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="HttpURLConnection" />
+
+                    <Button
+                        android:id="@+id/button43"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="get" />
+
+                    <Button
+                        android:id="@+id/button48"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Post" />
+
+                    <Button
+                        android:id="@+id/button26"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:onClick="finish"
+                        android:text="@string/finish" />
+
+                </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content">
 
         <ScrollView
             android:layout_width="match_parent"

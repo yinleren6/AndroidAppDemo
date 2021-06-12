@@ -32,12 +32,12 @@
         android:id="@+id/b_sql"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginBottom="32dp"
         android:text="SQLite数据库"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="@+id/b_read_file"
-        app:layout_constraintTop_toBottomOf="@+id/b_w_pr" />
+        app:layout_constraintStart_toStartOf="@+id/b_read_file" />
 
     <Button
         android:id="@+id/b_w_p"

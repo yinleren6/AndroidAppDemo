@@ -30,7 +30,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity_BaiduMapView"></activity>
+        <activity android:name=".cardViewActivity"></activity>
+        <activity android:name=".Activity_BaiduMapView" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -153,7 +154,9 @@
                 <category android:name="AAAAA" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

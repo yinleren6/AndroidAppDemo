@@ -7,7 +7,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:name="moe.demo.demo.Class_Left_Frogment"
+        android:name="moe.demo.myapplication.Class_Left_Frogment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
@@ -20,7 +20,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView2"
-            android:name="moe.demo.demo.Class_Right_Frogment"
+            android:name="moe.demo.myapplication.Class_Right_Frogment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </FrameLayout>

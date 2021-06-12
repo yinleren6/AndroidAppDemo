@@ -11,13 +11,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Activity_Activity extends AppCompatActivity {
+public class Activity_Activity extends BaseActivity {
     private static final String TAG = "TAG_Activity_Activitty";
     ListView listView;
     List<ListItem1> list;
@@ -47,7 +45,7 @@ public class Activity_Activity extends AppCompatActivity {
         list.add(new ListItem1(R.drawable.icon, "拨号界面"));
         list.add(new ListItem1(R.drawable.icon, "对话框样式活动"));
         list.add(new ListItem1(R.drawable.icon, "活动的4种启动方式 -->"));
-        list.add(new ListItem1(R.drawable.icon, "..."));
+
 
         listView = findViewById(R.id.listView);
         ListAdapter1 adapter = new ListAdapter1(this, R.layout.listview_adapter1, list);
@@ -93,10 +91,7 @@ public class Activity_Activity extends AppCompatActivity {
                     intent6.setClass(this, Activity_Launch_Mode.class);
                     startActivity(intent6);
                     break;
-                case 7:
-                    Toast.makeText(Activity_Activity.this, "...", Toast.LENGTH_LONG).show();
 
-                    break;
             }
         });
     }
@@ -123,7 +118,10 @@ public class Activity_Activity extends AppCompatActivity {
     }
 
     public void finish(View view) {
-        this.finish();
+//        this.finish();
+        Intent intent = new Intent();
+        intent.setAction("exit_app");
+         view.getContext().sendBroadcast(intent);
     }
     //活动的7种生命周期
 

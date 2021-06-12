@@ -44,8 +44,7 @@ public class Activity_okhttp extends AppCompatActivity implements View.OnClickLi
 
 
 
-    public Activity_okhttp() throws MalformedURLException {
-    }
+
     //===========post
 
     @Override

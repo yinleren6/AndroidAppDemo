@@ -18,18 +18,6 @@ public class Recycler_Adapter extends RecyclerView.Adapter<Recycler_Adapter.View
     private static final String TAG = "TAG_Recycler_Adapter";
     private final List<ListItem1> datas;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        private final ImageView imageView;
-        private final TextView textView;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.selfimage);
-            textView = itemView.findViewById(R.id.selftextView01);
-        }
-    }
-
     public Recycler_Adapter(List<ListItem1> datas) {
         this.datas = datas;
     }
@@ -49,17 +37,36 @@ public class Recycler_Adapter extends RecyclerView.Adapter<Recycler_Adapter.View
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i(TAG, "点击  ");
                 Toast.makeText(v.getContext(), "点击了第 " + holder.getAdapterPosition(), Toast.LENGTH_LONG).show();
             }
-        }); holder.imageView.setOnClickListener(v -> {
+        });
+        holder.imageView.setOnClickListener(v -> {
             Log.i(TAG, "点击 图");
 
             Toast.makeText(v.getContext(), "你点击了 图 " + holder.getAdapterPosition() + "--" + items.getName(), Toast.LENGTH_LONG).show();
+        });
+        holder.textView.setOnClickListener(v -> {
+            Log.i(TAG, "点击 文本");
+
+            Toast.makeText(v.getContext(), "你点击了  " + holder.getAdapterPosition() + "--" + items.getName(), Toast.LENGTH_LONG).show();
         });
     }
 
     @Override
     public int getItemCount() {
         return datas.size();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        private final ImageView imageView;
+        private final TextView textView;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            imageView = itemView.findViewById(R.id.selfimage);
+            textView = itemView.findViewById(R.id.selftextView01);
+        }
     }
 }

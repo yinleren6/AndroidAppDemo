@@ -1,5 +1,11 @@
 package moe.demo.myapplication;
 
+/**
+ * 自定义列表项
+ * 可以显示一个图片
+ * 和一个主要文本
+ * 和一个副文本
+ */
 public class ListItem2 {
     private String t1;
     private String t2;
