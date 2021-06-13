@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
@@ -30,7 +29,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Activity_CameraAlbum extends AppCompatActivity implements View.OnClickListener {
+public class Activity_CameraAlbum extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "TAG_Activity_CameraAlbum";
     private static final int CAMERA = 1;
     private static final int Album = 2;
@@ -42,12 +41,13 @@ public class Activity_CameraAlbum extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_album);
+
+        setTitle("图像多媒体提供器  CameraAlbum");
         findViewById(R.id.button22).setOnClickListener(this);
         findViewById(R.id.button25).setOnClickListener(this);
         findViewById(R.id.button27).setOnClickListener(this);
         findViewById(R.id.button32).setOnClickListener(this);
         mImageView = findViewById(R.id.imageView);
-
     }
 
     @Override

@@ -11,13 +11,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import org.jetbrains.annotations.NotNull;
 
-public class RuntimePermission extends AppCompatActivity implements View.OnClickListener {
+public class RuntimePermission extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "TAG_RuntimePermission";
     Button mButton1;
     EditText mEditText;
@@ -28,7 +27,7 @@ public class RuntimePermission extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_run_time_permission);
 
         mButton1 = findViewById(R.id.call);
-
+        setTitle("运行时权限 RuntimePermission");
         mButton1.setOnClickListener(this);
         mEditText = findViewById(R.id.num);
     }

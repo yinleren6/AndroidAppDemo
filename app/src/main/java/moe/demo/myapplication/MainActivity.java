@@ -1,6 +1,5 @@
 package moe.demo.myapplication;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,9 +25,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "TAG_Main_Activity";
-    ListView listView;
-    List<ListItem2> list;
-    Intent i;
+
+
+
     DrawerLayout mDrawerLayout;
     RecyclerView recyclerView1;
     boolean isOpen = false;
@@ -67,90 +65,94 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.abc_vector_test);
-        }
 
 
-        i = new Intent();
-        list = new ArrayList<>();
-        list.add(new ListItem2("Activity", "活动测试", R.drawable.icon));
-        list.add(new ListItem2("Service", "服务测试", R.drawable.icon));
-        list.add(new ListItem2("Broadcast", "广播接收器测试", R.drawable.icon));
-        list.add(new ListItem2("RecyclerView", "一种更强大的 ListView", R.drawable.icon));
-        list.add(new ListItem2("okhttp", "网络测试", R.drawable.icon));
-        list.add(new ListItem2("Fragment", "一种碎片化布局", R.drawable.icon));
-        list.add(new ListItem2("Notification", "通知测试", R.drawable.icon));
-        list.add(new ListItem2("Data Storage", "三种数据持久化技术", R.drawable.icon));
-        list.add(new ListItem2("Runtime Permission", "运行时权限", R.drawable.icon));
-        list.add(new ListItem2("ContentProvider", "内容提供器", R.drawable.icon));
-        list.add(new ListItem2("Camera&Album", "照片相机", R.drawable.icon));
-        list.add(new ListItem2("Music&Video", "音乐视频", R.drawable.icon));
-        list.add(new ListItem2("WebView", "浏览网页", R.drawable.icon));
-        list.add(new ListItem2("XML/JSON", "数据解析", R.drawable.icon));
-        list.add(new ListItem2("Service", "服务demo", R.drawable.icon));
-        list.add(new ListItem2("Service", "百度地图SDK", R.drawable.icon));
-
-        listView = findViewById(R.id.listView);
-        ListAdapter2 adapter = new ListAdapter2(this, R.layout.listview_adapter2, list);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener((parent, view, position, id) -> {
-            Log.i(TAG, "listview 点击事件");
-            switch (position) {
-                case 0:
-                    i.setClass(MainActivity.this, Activity_Activity.class);
-                    break;
-                case 1:
-                    i.setClass(MainActivity.this, Activity_Service.class);
-                    break;
-                case 2:
-                    i.setClass(MainActivity.this, Activity_Broadcast.class);
-                    break;
-                case 3:
-                    i.setClass(MainActivity.this, Activity_Recycler_List.class);
-                    break;
-                case 4:
-                    i.setClass(MainActivity.this, Activity_okhttp.class);
-                    break;
-                case 5:
-                    i.setClass(MainActivity.this, Activity_Fragment.class);
-                    break;
-                case 6:
-                    i.setClass(MainActivity.this, Activity_Notification.class);
-                    break;
-                case 7:
-                    i.setClass(MainActivity.this, Activity_Data_Storage.class);
-                    break;
-                case 8:
-                    i.setClass(MainActivity.this, RuntimePermission.class);
-                    break;
-                case 9:
-                    i.setClass(MainActivity.this, Activity_ContentProvider_read.class);
-                    break;
-                case 10:
-                    i.setClass(MainActivity.this, Activity_CameraAlbum.class);
-                    break;
-                case 11:
-                    i.setClass(MainActivity.this, Activity_MediaPlayer.class);
-                    break;
-                case 12:
-                    i.setClass(MainActivity.this, Activity_webView.class);
-                    break;
-                case 13:
-                    i.setClass(MainActivity.this, Activity_XML.class);
-                    break;
-                case 14:
-                    i.setClass(MainActivity.this, Download_Demo.class);
-                    break;
-                case 15:
-                    i.setClass(MainActivity.this, Activity_Baidu_Map_SKD.class);
-                    break;
+   findViewById(R.id.floatingActionButton2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "按下了浮动按钮", Toast.LENGTH_SHORT).show();
             }
-            startActivity(i);
         });
+
+//        list = new ArrayList<>();
+//        list.add(new ListItem2("Activity", "活动测试", R.drawable.icon));
+//        list.add(new ListItem2("Service", "服务测试", R.drawable.icon));
+//        list.add(new ListItem2("Broadcast", "广播接收器测试", R.drawable.icon));
+//        list.add(new ListItem2("RecyclerView", "一种更强大的 ListView", R.drawable.icon));
+//        list.add(new ListItem2("okhttp", "网络测试", R.drawable.icon));
+//        list.add(new ListItem2("Fragment", "一种碎片化布局", R.drawable.icon));
+//        list.add(new ListItem2("Notification", "通知测试", R.drawable.icon));
+//        list.add(new ListItem2("Data Storage", "三种数据持久化技术", R.drawable.icon));
+//        list.add(new ListItem2("Runtime Permission", "运行时权限", R.drawable.icon));
+//        list.add(new ListItem2("ContentProvider", "内容提供器", R.drawable.icon));
+//        list.add(new ListItem2("Camera&Album", "照片相机", R.drawable.icon));
+//        list.add(new ListItem2("Music&Video", "音乐视频", R.drawable.icon));
+//        list.add(new ListItem2("WebView", "浏览网页", R.drawable.icon));
+//        list.add(new ListItem2("XML/JSON", "数据解析", R.drawable.icon));
+//        list.add(new ListItem2("Service", "服务demo", R.drawable.icon));
+//        list.add(new ListItem2("Service", "百度地图SDK", R.drawable.icon));
+//        list.add(new ListItem2("CardViewActivity", " ", R.drawable.icon));
+
+//        listView = findViewById(R.id.listView);
+//        ListAdapter2 adapter = new ListAdapter2(this, R.layout.listview_adapter2, list);
+//        listView.setAdapter(adapter);
+//        listView.setOnItemClickListener((parent, view, position, id) -> {
+//            Log.i(TAG, "listview 点击事件");
+//            switch (position) {
+//                case 0:
+//                    i.setClass(MainActivity.this, Activity_Activity.class);
+//                    break;
+//                case 1:
+//                    i.setClass(MainActivity.this, Activity_Service.class);
+//                    break;
+//                case 2:
+//                    i.setClass(MainActivity.this, Activity_Broadcast.class);
+//                    break;
+//                case 3:
+//                    i.setClass(MainActivity.this, Activity_Recycler_List.class);
+//                    break;
+//                case 4:
+//                    i.setClass(MainActivity.this, Activity_okhttp.class);
+//                    break;
+//                case 5:
+//                    i.setClass(MainActivity.this, Activity_Fragment.class);
+//                    break;
+//                case 6:
+//                    i.setClass(MainActivity.this, Activity_Notification.class);
+//                    break;
+//                case 7:
+//                    i.setClass(MainActivity.this, Activity_Data_Storage.class);
+//                    break;
+//                case 8:
+//                    i.setClass(MainActivity.this, RuntimePermission.class);
+//                    break;
+//                case 9:
+//                    i.setClass(MainActivity.this, Activity_ContentProvider_read.class);
+//                    break;
+//                case 10:
+//                    i.setClass(MainActivity.this, Activity_CameraAlbum.class);
+//                    break;
+//                case 11:
+//                    i.setClass(MainActivity.this, Activity_MediaPlayer.class);
+//                    break;
+//                case 12:
+//                    i.setClass(MainActivity.this, Activity_webView.class);
+//                    break;
+//                case 13:
+//                    i.setClass(MainActivity.this, Activity_XML.class);
+//                    break;
+//                case 14:
+//                    i.setClass(MainActivity.this, Download_Demo.class);
+//                    break;
+//                case 15:
+//                    i.setClass(MainActivity.this, Activity_Baidu_Map_SKD.class);
+//                    break;
+//                case 16:
+//                    i.setClass(MainActivity.this, CardViewActivity.class);
+//                    break;
+//            }
+//            startActivity(i);
+//        });
         initDrawerlayout();
     }
 
@@ -205,19 +207,19 @@ public class MainActivity extends AppCompatActivity {
             }
         })
 
-               .setCallback(new Snackbar.Callback() {
-            @Override
-            public void onShown(Snackbar sb) {
-                super.onShown(sb);
-                Log.i(TAG, "Snackbar显示时的回调");
-            }
+                .setCallback(new Snackbar.Callback() {
+                    @Override
+                    public void onShown(Snackbar sb) {
+                        super.onShown(sb);
+                        Log.i(TAG, "Snackbar显示时的回调");
+                    }
 
-            @Override
-            public void onDismissed(Snackbar transientBottomBar, int event) {
-                super.onDismissed(transientBottomBar, event);
-                Log.i(TAG, "Snackbar消失时的回调");
-            }
-        })
+                    @Override
+                    public void onDismissed(Snackbar transientBottomBar, int event) {
+                        super.onDismissed(transientBottomBar, event);
+                        Log.i(TAG, "Snackbar消失时的回调");
+                    }
+                })
 
                 .show();
 
@@ -233,6 +235,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initToolBar() {
+
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.abc_vector_test);
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

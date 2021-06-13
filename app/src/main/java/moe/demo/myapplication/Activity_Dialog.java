@@ -3,9 +3,7 @@ package moe.demo.myapplication;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_Dialog extends AppCompatActivity {
+public class Activity_Dialog extends BaseActivity {
     private static final String TAG = "TAG_Dialog_Activity";
 
     @Override

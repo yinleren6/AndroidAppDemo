@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_MediaPlayer extends AppCompatActivity implements View.OnClickListener {
+public class Activity_MediaPlayer extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("音视频播放器 MediaPlayer");
         setContentView(R.layout.activity_media_player);
         findViewById(R.id.button36).setOnClickListener(this);
         findViewById(R.id.button37).setOnClickListener(this);

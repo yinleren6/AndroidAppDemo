@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -27,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Activity_Baidu_Map_SKD extends AppCompatActivity {
+public class Activity_Baidu_Map_SKD extends BaseActivity {
     private static final String TAG = "TAG_Activity_Baidu_Map_SKD";
     private static TextView textView;
     public LocationClient mLocationClient;

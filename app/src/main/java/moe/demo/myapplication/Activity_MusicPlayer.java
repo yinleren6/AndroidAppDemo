@@ -13,13 +13,12 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Activity_MusicPlayer extends AppCompatActivity implements View.OnClickListener {
+public class Activity_MusicPlayer extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "TAG_Activity_MusicPlayer";
     MediaPlayer mPlayer;
 

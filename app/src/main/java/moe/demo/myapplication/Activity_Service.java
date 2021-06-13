@@ -9,9 +9,7 @@ import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_Service extends AppCompatActivity implements View.OnClickListener {
+public class Activity_Service extends BaseActivity implements View.OnClickListener {
 
     final String TAG = "TAG_Service_Activitty";
     private Class_Service.DownloadBinder mBinder;
@@ -40,7 +38,7 @@ public class Activity_Service extends AppCompatActivity implements View.OnClickL
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
-        this.setTitle("服务");
+        this.setTitle("服务 Service");
         findViewById(R.id.button1).setOnClickListener(this);
         findViewById(R.id.button1).setOnClickListener(this);
         findViewById(R.id.button7).setOnClickListener(this);

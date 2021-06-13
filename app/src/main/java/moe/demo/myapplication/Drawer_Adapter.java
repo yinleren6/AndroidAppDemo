@@ -91,7 +91,7 @@ public class Drawer_Adapter extends RecyclerView.Adapter<Drawer_Adapter.ViewHold
         public ViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.selfimage);
-            textView = itemView.findViewById(R.id.selftextView01);
+            textView = itemView.findViewById(R.id.selftext);
         }
     }
 

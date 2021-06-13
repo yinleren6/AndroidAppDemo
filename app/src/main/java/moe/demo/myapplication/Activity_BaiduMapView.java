@@ -1,8 +1,7 @@
 package moe.demo.myapplication;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
 
 import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
@@ -15,7 +14,7 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 
-public class Activity_BaiduMapView extends AppCompatActivity {
+public class Activity_BaiduMapView extends BaseActivity {
     static BaiduMap baiduMap;
     static boolean isFirstLocate = true;
     public LocationClient mLocationClient;
@@ -32,7 +31,7 @@ public class Activity_BaiduMapView extends AppCompatActivity {
 
         }
 
-        MyLocationData.Builder builder=new MyLocationData.Builder();
+        MyLocationData.Builder builder = new MyLocationData.Builder();
         builder.latitude(location.getLatitude());
         builder.longitude(location.getLongitude());
         MyLocationData data = builder.build();
@@ -44,6 +43,12 @@ public class Activity_BaiduMapView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         SDKInitializer.initialize(getApplication());
+
+        //自定义页面主题 Theme.MyApplication.NoActionBar
+        //设置活动全屏模式 状态栏透明
+        //实现沉浸式效果
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         setContentView(R.layout.activity_baidu_map_view);
 

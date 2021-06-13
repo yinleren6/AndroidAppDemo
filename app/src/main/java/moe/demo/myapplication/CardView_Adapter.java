@@ -13,23 +13,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 
-public class Recycler_Adapter extends RecyclerView.Adapter<Recycler_Adapter.ViewHolder> {
+public class CardView_Adapter extends RecyclerView.Adapter<CardView_Adapter.ViewHolder> {
 
     private static final String TAG = "TAG_Recycler_Adapter";
     private final List<ListItem1> datas;
 
-    public Recycler_Adapter(List<ListItem1> datas) {
+    public CardView_Adapter(List<ListItem1> datas) {
         this.datas = datas;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_adapter1, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_item_adapter, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(Recycler_Adapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(CardView_Adapter.ViewHolder holder, int position) {
         ListItem1 items = datas.get(position);
 
         holder.imageView.setImageResource(items.getImageId());
@@ -46,11 +46,11 @@ public class Recycler_Adapter extends RecyclerView.Adapter<Recycler_Adapter.View
 
             Toast.makeText(v.getContext(), "你点击了 图 " + holder.getAdapterPosition() + "--" + items.getName(), Toast.LENGTH_LONG).show();
         });
-//        holder.textView.setOnClickListener(v -> {
-//            Log.i(TAG, "点击 文本");
-//
-//            Toast.makeText(v.getContext(), "你点击了  " + holder.getAdapterPosition() + "--" + items.getName(), Toast.LENGTH_LONG).show();
-//        });
+        holder.textView.setOnClickListener(v -> {
+            Log.i(TAG, "点击 文本");
+
+            Toast.makeText(v.getContext(), "你点击了  " + holder.getAdapterPosition() + "--" + items.getName(), Toast.LENGTH_LONG).show();
+        });
     }
 
     @Override

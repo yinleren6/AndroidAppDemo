@@ -11,10 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-
-public class Activity_Data_Storage_SQLite extends AppCompatActivity implements View.OnClickListener {
+public class Activity_Data_Storage_SQLite extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "TAG_Activity_SQLite";
     Button insert, upgrade, delete, query, ix, ux, dx, qx;
     EditText mText11, mText12, mText13, mText21, mText22, mText23, mText31, mText41;

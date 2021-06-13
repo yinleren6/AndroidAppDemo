@@ -30,8 +30,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".cardViewActivity"></activity>
-        <activity android:name=".Activity_BaiduMapView" />
+
+        <activity android:name=".CardViewActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
+        <activity
+            android:name=".Activity_BaiduMapView"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -88,9 +92,11 @@
         <activity android:name=".Activity_Data_Storage" />
         <activity android:name=".Activity_Data_Storage_SQLite" />
         <activity android:name=".Activity_Fragment" />
-        <activity android:name=".Activity_Recycler_List" />
+        <activity android:name=".Activity_RecyclerView" />
         <activity android:name=".Activity_View" />
-        <activity android:name=".Activity_open_noti" />
+        <activity
+            android:name=".Activity_open_noti"
+            android:launchMode="singleTask" />
         <activity android:name=".Activity_Notification" />
         <activity
             android:name=".Activity_Launch_Mode"

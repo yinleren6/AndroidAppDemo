@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -30,7 +28,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okio.BufferedSink;
 
-public class Activity_okhttp extends AppCompatActivity implements View.OnClickListener {
+public class Activity_okhttp extends BaseActivity implements View.OnClickListener {
     private static final MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
     private final String TAG = "TAG_OkHttp_测试";
     //1 创建 OkHttpClient 实例
@@ -51,7 +49,7 @@ public class Activity_okhttp extends AppCompatActivity implements View.OnClickLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_okhttp);
-        setTitle("okHttp");
+        setTitle("okhttp");
         textView = findViewById(R.id.textView7);
         editText = findViewById(R.id.editTextTextPersonName2);
 

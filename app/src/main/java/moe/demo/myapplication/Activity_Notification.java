@@ -11,10 +11,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
-public class Activity_Notification extends AppCompatActivity implements View.OnClickListener {
+public class Activity_Notification extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "TAG_通知测试";
     Intent intent;
     Intent intent2;
@@ -33,7 +32,7 @@ public class Activity_Notification extends AppCompatActivity implements View.OnC
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        this.setTitle("通知");
+        setTitle("通知 Notification");
 
 
         //点击通知动作

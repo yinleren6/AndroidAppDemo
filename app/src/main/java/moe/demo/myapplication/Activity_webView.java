@@ -7,9 +7,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_webView extends AppCompatActivity {
+public class Activity_webView extends BaseActivity {
     WebView mWebView;
     EditText mEditText;
     Button mButton;
@@ -18,7 +16,7 @@ public class Activity_webView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
-        setTitle("WebViiew");
+        setTitle("使用 WebView 浏览网页");
 
         mWebView = findViewById(R.id.webView);
         mWebView.getSettings().setJavaScriptEnabled(true);

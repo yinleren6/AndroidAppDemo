@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -21,7 +19,7 @@ import java.io.OutputStreamWriter;
 import java.util.Date;
 
 
-public class Activity_Data_Storage extends AppCompatActivity {
+public class Activity_Data_Storage extends BaseActivity {
 
     private Button f1, f2, f3, p1, p2, sqlite;
     private TextView textView, textView2;
@@ -34,7 +32,7 @@ public class Activity_Data_Storage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_storage);
         init();
-
+        setTitle("数据存储");
 
     }
 

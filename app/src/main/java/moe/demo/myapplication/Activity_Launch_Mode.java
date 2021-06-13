@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_Launch_Mode extends AppCompatActivity {
+public class Activity_Launch_Mode extends BaseActivity {
     private static final String TAG = "TAG_Activity_Launch_Mode";
 
     @Override

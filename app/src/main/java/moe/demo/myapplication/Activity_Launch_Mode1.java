@@ -8,9 +8,7 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_Launch_Mode1 extends AppCompatActivity implements View.OnLongClickListener {
+public class Activity_Launch_Mode1 extends BaseActivity implements View.OnLongClickListener {
     private static final String TAG = "TAG_Activity_Launch_Mode1";
     TextView textView;
     RadioGroup radioGroup;

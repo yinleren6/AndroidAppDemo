@@ -27,7 +27,7 @@ public class ListAdapter1 extends ArrayAdapter {
         View view = LayoutInflater.from(getContext()).inflate(id, null);
 
         ImageView image = view.findViewById(R.id.selfimage);
-        TextView t1 = view.findViewById(R.id.selftextView01);
+        TextView t1 = view.findViewById(R.id.selftext);
 
         image.setImageResource(item.getImageId());
         t1.setText(item.getName());

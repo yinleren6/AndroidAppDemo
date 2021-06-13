@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -21,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Activity_ContentProvider_read extends AppCompatActivity {
+public class Activity_ContentProvider_read extends BaseActivity {
 
 
     ArrayAdapter<String> mAdapter;
@@ -32,7 +31,7 @@ public class Activity_ContentProvider_read extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content_provider_read);
-
+        setTitle("内容提供器 ContentProvider");
         ListView mView = findViewById(R.id.phonelist);
         mAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, mList);
         mView.setAdapter(mAdapter);

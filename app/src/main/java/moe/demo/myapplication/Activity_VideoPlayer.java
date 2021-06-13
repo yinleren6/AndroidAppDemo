@@ -7,9 +7,7 @@ import android.widget.MediaController;
 import android.widget.Spinner;
 import android.widget.VideoView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_VideoPlayer extends AppCompatActivity {
+public class Activity_VideoPlayer extends BaseActivity {
     MediaController mController;
     VideoView mVideoView;
     int[] uri = {R.raw.trump, R.raw.ah};

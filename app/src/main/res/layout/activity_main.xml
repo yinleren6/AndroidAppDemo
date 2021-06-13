@@ -32,12 +32,17 @@
                 app:title="标题"
                 app:titleTextColor="#FFFFFF" />
 
-            <ListView
-                android:id="@+id/listView"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerView3"
+                android:name="moe.demo.myapplication.MianActivityFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent" />
+            <!--            <ListView-->
+            <!--                android:id="@+id/listView"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent">-->
 
-            </ListView>
+            <!--            </ListView>-->
 
         </LinearLayout>
 
@@ -47,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:clickable="true"
+
             app:elevation="6dp"
             app:srcCompat="@drawable/abc_vector_test" />
 
@@ -58,16 +63,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:background="#FFFFFF">
-
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

@@ -5,8 +5,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -31,7 +29,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class Activity_XML extends AppCompatActivity implements View.OnClickListener {
+public class Activity_XML extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "TAG_Activity_XML";
 
     private TextView mTvResponseText;
@@ -41,7 +39,7 @@ public class Activity_XML extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xml);
-        setTitle("XML");
+        setTitle("解析XML和json");
         mTvResponseText = findViewById(R.id.textView15);
         findViewById(R.id.button44).setOnClickListener(this);
         findViewById(R.id.button45).setOnClickListener(this);

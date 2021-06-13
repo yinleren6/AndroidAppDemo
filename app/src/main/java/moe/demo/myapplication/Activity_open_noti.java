@@ -3,9 +3,7 @@ package moe.demo.myapplication;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_open_noti extends AppCompatActivity {
+public class Activity_open_noti extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

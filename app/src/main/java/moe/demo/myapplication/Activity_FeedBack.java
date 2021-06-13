@@ -9,9 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_FeedBack extends AppCompatActivity {
+public class Activity_FeedBack extends BaseActivity {
 
     EditText nameInput;
     EditText pwdInput;

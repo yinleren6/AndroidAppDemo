@@ -7,21 +7,68 @@
     android:orientation="vertical"
     tools:context=".Download_Demo">
 
-    <Button
-        android:id="@+id/button50"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="开始" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button53"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="暂停" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp" />
 
-    <Button
-        android:id="@+id/button54"
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="TextView" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="取消" />
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="开始" />
+
+        <Button
+            android:id="@+id/button53"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="暂停" />
+
+        <Button
+            android:id="@+id/button54"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="取消" />
+    </LinearLayout>
 </LinearLayout>

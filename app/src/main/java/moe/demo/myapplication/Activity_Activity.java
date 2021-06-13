@@ -26,7 +26,7 @@ public class Activity_Activity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity);
-        this.setTitle("活动");
+        setTitle("活动 Activity");
         Log.i(TAG, "onCreate");
         //重载此活动后可以调取之前存储的零食数据
         if (savedInstanceState != null) {
@@ -118,10 +118,10 @@ public class Activity_Activity extends BaseActivity {
     }
 
     public void finish(View view) {
-//        this.finish();
+        //        this.finish();
         Intent intent = new Intent();
         intent.setAction("exit_app");
-         view.getContext().sendBroadcast(intent);
+        view.getContext().sendBroadcast(intent);
     }
     //活动的7种生命周期
 

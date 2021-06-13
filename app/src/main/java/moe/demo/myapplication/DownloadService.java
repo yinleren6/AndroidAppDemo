@@ -30,6 +30,7 @@ public class DownloadService extends Service {
         @Override
         public void onProgress(int progress) {
             getNotificationManager().notify(1, getNotification("在下载中...", progress));
+
         }
 
         @Override
@@ -111,7 +112,7 @@ public class DownloadService extends Service {
                     .setContentIntent(pi)//
                     .setProgress(100, progress, true)//
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.icon))//
-                    .build();//}
+                    .build();//
         }
 
         if (0 <= progress && progress != 100) {

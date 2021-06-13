@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context=".Activity_ContentProvider_read">
 
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="以下会显示通讯录联系人" />
+
     <ListView
         android:id="@+id/phonelist"
         android:layout_width="409dp"

@@ -12,9 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Activity_Broadcast extends AppCompatActivity {
+public class Activity_Broadcast extends BaseActivity {
     final String TAG = "TAG_Broadcast_Activity";
     Toast toast;
 
@@ -22,7 +20,7 @@ public class Activity_Broadcast extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_broadcast);
-        this.setTitle("Broadcast");
+        this.setTitle("广播接收器 Broadcast");
 
     }
 
