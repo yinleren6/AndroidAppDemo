@@ -20,9 +20,9 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
-    <!--android:name="moe.demo.myapplication.MyContext" 用于注册全局Context -->
+
     <application
-        android:name="moe.demo.myapplication.MyContext"
+        android:name=".MyContext"
         android:allowBackup="true"
         android:foregroundServiceType="location|camera"
         android:icon="@drawable/icon"
@@ -31,6 +31,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".LongRunningService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".Activity_Collapsing_Toobar"
             android:theme="@style/Collapsing_Theme" />
@@ -50,8 +55,13 @@
             android:enabled="true"
             android:process=":remote" />
 
-        <activity android:name=".Activity_Baidu_Map_SKD" />
-
+        <activity
+            android:name=".Activity_Baidu_Map_SDk"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait" />
+        <!-- android:screenOrientation=  "portrait" | "landscape"  只支持竖屏或横屏-->
+        <!-- android:resizeableActivity="false" 是否能设置支持多窗口模式 SDK >= 24 -->
+        <!-- 如果 targetSDK <24 且活动不允许切换横竖屏，那么将不支持窗口模式-->
         <service
             android:name=".DownloadService"
             android:enabled="true"

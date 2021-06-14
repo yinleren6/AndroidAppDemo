@@ -123,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);//设置toolbar右边的菜单项
+        //设置toolbar右边的菜单项
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 

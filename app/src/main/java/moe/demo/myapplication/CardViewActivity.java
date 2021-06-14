@@ -20,16 +20,16 @@ public class CardViewActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ListItem1[] datas = {
-            new ListItem1(R.drawable.pic1, "1"),
-            new ListItem1(R.drawable.pic2, "2"),
-            new ListItem1(R.drawable.pic3, "3"),
-            new ListItem1(R.drawable.pic4, "4"),
-            new ListItem1(R.drawable.pic5, "5"),
-            new ListItem1(R.drawable.pic6, "6"),
-            new ListItem1(R.drawable.pic7, "7"),
-            new ListItem1(R.drawable.pic8, "8"),
-            new ListItem1(R.drawable.pic9, "9"),
-            new ListItem1(R.drawable.pic10, "10")
+            new ListItem1(R.drawable.pic1, "111111111111111"),
+            new ListItem1(R.drawable.pic2, "2222222222"),
+            new ListItem1(R.drawable.pic3, "33333333333"),
+            new ListItem1(R.drawable.pic4, "4444444444"),
+            new ListItem1(R.drawable.pic5, "55555555555"),
+            new ListItem1(R.drawable.pic6, "6666666666666"),
+            new ListItem1(R.drawable.pic7, "777777777"),
+            new ListItem1(R.drawable.pic8, "888888888888"),
+            new ListItem1(R.drawable.pic9, "99999999999999"),
+            new ListItem1(R.drawable.pic10, "100000000000")
     };
 
     List<ListItem1> mListItem1s = new ArrayList<>();

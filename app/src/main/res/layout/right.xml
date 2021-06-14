@@ -11,4 +11,10 @@
         android:background="#2196F3"
         android:text="右边的布局" />
 
+    <Button
+        android:id="@+id/button57"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
 </LinearLayout>

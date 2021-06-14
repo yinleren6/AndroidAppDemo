@@ -110,7 +110,7 @@ public class MianActivityFragment extends Fragment {
                     i.setClass(getActivity(), Download_Demo.class);
                     break;
                 case 15:
-                    i.setClass(getActivity(), Activity_Baidu_Map_SKD.class);
+                    i.setClass(getActivity(), Activity_Baidu_Map_SDk.class);
                     break;
                 case 16:
                     i.setClass(getActivity(), CardViewActivity.class);

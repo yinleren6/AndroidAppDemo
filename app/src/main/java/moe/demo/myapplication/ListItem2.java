@@ -7,6 +7,7 @@ package moe.demo.myapplication;
  * 和一个副文本
  */
 public class ListItem2 {
+
     private String t1;
     private String t2;
     private int imageId;

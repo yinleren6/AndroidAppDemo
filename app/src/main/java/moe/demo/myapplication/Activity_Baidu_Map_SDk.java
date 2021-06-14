@@ -28,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Activity_Baidu_Map_SKD extends BaseActivity {
+public class Activity_Baidu_Map_SDk extends BaseActivity {
     private static final String TAG = "TAG_Activity_Baidu_Map_SKD";
     private static TextView textView;
     public LocationClient mLocationClient;
@@ -55,7 +55,7 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
         findViewById(R.id.button56).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Activity_Baidu_Map_SKD.this, Activity_BaiduMapView.class);
+                Intent intent = new Intent(Activity_Baidu_Map_SDk.this, Activity_BaiduMapView.class);
                 startActivity(intent);
             }
         });
@@ -129,7 +129,7 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
 
         if (!permissionList.isEmpty()) {
             String[] permissions = permissionList.toArray(new String[permissionList.size()]);
-            ActivityCompat.requestPermissions(Activity_Baidu_Map_SKD.this, permissions, 1);
+            ActivityCompat.requestPermissions(Activity_Baidu_Map_SDk.this, permissions, 1);
             Log.i(TAG, " 请求权限");
         }
         LocationManager locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
