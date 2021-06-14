@@ -2,6 +2,7 @@ package moe.demo.myapplication;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,8 +19,20 @@ public class CardViewActivity extends AppCompatActivity {
 
 
     RecyclerView recyclerView;
-    List<ListItem1> list = new ArrayList<>();
-    ListItem1[] datas = {new ListItem1(R.drawable.icon, "1"), new ListItem1(R.drawable.icon, "2"), new ListItem1(R.drawable.icon, "3"), new ListItem1(R.drawable.icon, "4"), new ListItem1(R.drawable.icon, "5"), new ListItem1(R.drawable.icon, "6"), new ListItem1(R.drawable.icon, "7"), new ListItem1(R.drawable.icon, "8"), new ListItem1(R.drawable.icon, "9"), new ListItem1(R.drawable.icon, "10")};
+    ListItem1[] datas = {
+            new ListItem1(R.drawable.pic1, "1"),
+            new ListItem1(R.drawable.pic2, "2"),
+            new ListItem1(R.drawable.pic3, "3"),
+            new ListItem1(R.drawable.pic4, "4"),
+            new ListItem1(R.drawable.pic5, "5"),
+            new ListItem1(R.drawable.pic6, "6"),
+            new ListItem1(R.drawable.pic7, "7"),
+            new ListItem1(R.drawable.pic8, "8"),
+            new ListItem1(R.drawable.pic9, "9"),
+            new ListItem1(R.drawable.pic10, "10")
+    };
+
+    List<ListItem1> mListItem1s = new ArrayList<>();
     CardView_Adapter adapter;
 
     @Override
@@ -28,11 +41,11 @@ public class CardViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_card_view);
         setTitle("卡片布局");
         recyclerView = findViewById(R.id.recyclerview3);
-
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        //此处设置卡片布局的列数
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        adapter = new CardView_Adapter(list);
+        adapter = new CardView_Adapter(mListItem1s);
         recyclerView.setAdapter(adapter);
 
 
@@ -42,11 +55,11 @@ public class CardViewActivity extends AppCompatActivity {
     }
 
     private void reload() {
-        list.clear();
-        for (int i = 0; i < 50; i++) {
+        mListItem1s.clear();
+        for (int i = 0; i <= 10; i++) {
             Random random = new Random();
             int index = random.nextInt(datas.length);
-            list.add(datas[index]);
+            mListItem1s.add(datas[index]);
 
         }
     }
@@ -61,7 +74,7 @@ public class CardViewActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            Thread.sleep(2000);
+                            Thread.sleep(1000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -79,30 +92,35 @@ public class CardViewActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void initToolBar() {
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.abc_vector_test);
-        }
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+//            actionBar.setHomeAsUpIndicator(R.drawable.abc_vector_test);
+        }
+
 
         //也可以在布局中设置这些属性,具体见布局文件
         toolbar.setNavigationIcon(R.drawable.abc_vector_test);//设置最左侧图标
         toolbar.setLogo(R.mipmap.ic_launcher);//设置程序logo图标
-        toolbar.setTitle("卡片布局");//需要在替换actionbar之前设置,否则显示不了
+        toolbar.setTitle("卡片布局");
 
         toolbar.setTitleTextColor(Color.parseColor("#ff0000"));//设置标题的字体颜色
-        toolbar.setSubtitle("子标题");
+        toolbar.setSubtitle("子标题zzzz");
         toolbar.setSubtitleTextColor(Color.parseColor("#00ff00"));//设置子标题的字体颜色
 
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                CardViewActivity.this.finish();
+
+            }
+        });
     }
 
 }

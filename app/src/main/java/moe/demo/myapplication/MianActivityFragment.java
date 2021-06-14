@@ -10,8 +10,6 @@ import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,15 +56,6 @@ public class MianActivityFragment extends Fragment {
         list.add(new ListItem2("Service", "百度地图SDK", R.drawable.icon));
         list.add(new ListItem2("CardViewActivity", " ", R.drawable.icon));
 
-
-        //碎片管理器
-        FragmentManager manager = getActivity().getSupportFragmentManager();
-        //事物管理器
-        FragmentTransaction transaction = manager.beginTransaction();
-        //使用事物管理器 替换当前帧布局的碎片
-        transaction.replace(R.id.fragmentContainerView3, new CardViewActivityFragment());
-        //把当前碎片放入栈中
-        transaction.addToBackStack(null);
 
         ListView listView = getActivity().findViewById(R.id.listView);
         Intent i = new Intent();
@@ -124,15 +113,12 @@ public class MianActivityFragment extends Fragment {
                     i.setClass(getActivity(), Activity_Baidu_Map_SKD.class);
                     break;
                 case 16:
-                     i.setClass(getActivity(), CardViewActivity.class);
-                    //提交
-//                    i.setAction("fragment");
-//                    transaction.commit();
+                    i.setClass(getActivity(), CardViewActivity.class);
                     break;
             }
-            if (i.getAction() != "fragment") {
-                startActivity(i);
-            }
+
+            startActivity(i);
+
 
         });
 

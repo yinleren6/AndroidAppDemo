@@ -43,7 +43,6 @@ public class Activity_BaiduMapView extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         SDKInitializer.initialize(getApplication());
-
         //自定义页面主题 Theme.MyApplication.NoActionBar
         //设置活动全屏模式 状态栏透明
         //实现沉浸式效果
@@ -51,11 +50,9 @@ public class Activity_BaiduMapView extends BaseActivity {
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         setContentView(R.layout.activity_baidu_map_view);
-
         mLocationClient = new LocationClient(getApplicationContext());
         mLocationClient.registerLocationListener(new MyLocationListerner());
         mapView = findViewById(R.id.bmapView);
-
         baiduMap = mapView.getMap();
         baiduMap.setMyLocationEnabled(true);
         mLocationClient.start();

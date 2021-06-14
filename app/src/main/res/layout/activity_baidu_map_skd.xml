@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     android:orientation="vertical"
     tools:context=".Activity_Baidu_Map_SKD">
 
@@ -17,8 +18,7 @@
     <RadioGroup
         android:id="@+id/radioGroup2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/mode"
@@ -46,6 +46,19 @@
             android:text="节省电量Battery_Saving" />
 
     </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="自动更新 （5秒）" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/button55"

@@ -8,7 +8,9 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +36,7 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
     int method = 0;
     LocationClientOption option;
     TextView mode;
+    Switch mSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +55,6 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
         findViewById(R.id.button56).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //开始定位
                 Intent intent = new Intent(Activity_Baidu_Map_SKD.this, Activity_BaiduMapView.class);
                 startActivity(intent);
             }
@@ -79,9 +81,28 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
         mLocationClient = new LocationClient(getApplicationContext());
         mLocationClient.registerLocationListener(new MyLocationListerner());
         option = new LocationClientOption();
-
+        mSwitch = findViewById(R.id.switch1);
+        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    option.setScanSpan(5000);
+                }
+                else {
+                    option.setScanSpan(0);
+                }
+            }
+        });
 
         sermode();
+        requestLocation();
+        if (option.getScanSpan() > 0) {
+            mSwitch.setChecked(true);
+        }
+        else {
+            mSwitch.setChecked(false);
+        }
+
     }
 
     private void initPermission() {
@@ -138,16 +159,16 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
             mode.setText("当前模式：节能模式");
             Log.i(TAG, "当前模式" + "Battery_Saving");
         }
+
     }
 
     private void requestLocation() {
-        //设置实时更新位置
-        option.setScanSpan(5000);
+        //设置刷新位置间隔 一般用于实时导航
+
+
         mLocationClient.setLocOption(option);
-        //需要具体地址
+        //是否需要具体地址 xx省xx市xx区
         option.setIsNeedAddress(true);
-
-
         mLocationClient.start();
     }
 
@@ -159,7 +180,7 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
                 if (grantResults.length > 0) {
                     for (int ressult : grantResults) {
                         if (ressult != PackageManager.PERMISSION_GRANTED) {
-                            Toast.makeText(this, "百度流氓需要权限", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "需要权限", Toast.LENGTH_SHORT).show();
                             finish();
                             return;
                         }
@@ -168,7 +189,7 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
                     requestLocation();
                 }
                 else {
-                    Toast.makeText(this, "没有钱权限", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "没有权限", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 break;
@@ -196,7 +217,7 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
             pos.append("街道：").append(bdLocation.getStreet()).append("\n");
 
 
-            pos.append("定位方式：" + bdLocation.getLocType()).append("\n");
+            pos.append("定位方式：");
             if (bdLocation.getLocType() == BDLocation.TypeGpsLocation) {
                 pos.append("GPS");
             }
@@ -206,6 +227,10 @@ public class Activity_Baidu_Map_SKD extends BaseActivity {
             else if (bdLocation.getLocType() == BDLocation.TypeServerCheckKeyError) {
                 pos.append("AK不存在或者非法");
             }
+            else {
+                pos.append("Null");
+            }
+            pos.append("\n状态码：" + bdLocation.getLocType());
             textView.setText(pos);
         }
     }
