@@ -3,21 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_refresh"
-        android:icon="@android:drawable/ic_popup_sync"
         android:orderInCategory="100"
-        android:title="more1"
+        android:title="刷新数据"
+
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_recreate"
+
         android:orderInCategory="100"
-        android:title="more2"
-        app:showAsAction="never" />
+        android:title="重载界面"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_item1"
-        android:title="按钮1"
+        android:title="卡片布局"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_item2"
-        android:title="按钮2"
+        android:title="瀑布流布局"
         app:showAsAction="never" />
 </menu>

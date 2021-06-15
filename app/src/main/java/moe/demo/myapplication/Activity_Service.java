@@ -12,25 +12,24 @@ import android.view.View;
 public class Activity_Service extends BaseActivity implements View.OnClickListener {
 
     final String TAG = "TAG_Service_Activitty";
-    private Class_Service.DownloadBinder mBinder;
     private boolean isBind;
 
     private final ServiceConnection conn = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            mBinder = (Class_Service.DownloadBinder) service;
-            mBinder.startDownload();
-            mBinder.getProgress();
+            Class_Service.DownloadBinder binder = (Class_Service.DownloadBinder) service;
+            binder.startDownload();
+            binder.getProgress();
             Log.i(TAG, "回调：绑定成功  isBind =  " + isBind);
             isBind = true;
-            //TODO 不会回调
+
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
             Log.i(TAG, "回调：绑定断开  isBind =  " + isBind);
             isBind = false;
-            //TODO 不会回调
+
         }
     };
 
@@ -78,7 +77,7 @@ public class Activity_Service extends BaseActivity implements View.OnClickListen
             }
         }
         else if (v.getId() == R.id.button51) {
-            Log.i(TAG, "按钮：启动服务");
+            Log.i(TAG, "按钮：前台服务");
             startService(new Intent(this, ForegroundService.class));
         }
         else if (v.getId() == R.id.button52) {

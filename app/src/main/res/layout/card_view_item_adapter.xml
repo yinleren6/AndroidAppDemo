@@ -30,7 +30,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="5dp"
-            android:background="#A2E490"
             android:text="TextView"
             android:textSize="20sp" />
 

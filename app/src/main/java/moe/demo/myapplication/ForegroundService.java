@@ -48,7 +48,8 @@ public class ForegroundService extends Service {
         Intent intent = new Intent(this, Activity_open_noti.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-        Notification notification = new NotificationCompat.Builder(this, "foregroundService")//
+        Notification notification = new NotificationCompat.Builder(this, "default")//
+              //  .setChannelId("default")
                 .setContentTitle("前台服务通知")//
                 .setContentText("前台服务正在运行")//
                 .setWhen(System.currentTimeMillis())//

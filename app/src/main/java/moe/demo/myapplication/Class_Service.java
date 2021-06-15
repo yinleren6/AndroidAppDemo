@@ -20,10 +20,11 @@ public class Class_Service extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Toast.makeText(getBaseContext(), "服务被启动onStartCommand", Toast.LENGTH_LONG).show();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(getBaseContext(), "服务被启动onStartCommand", Toast.LENGTH_LONG).show();
+//
                 Log.i(TAG, "服务被启动onStartCommand");
 //                stopSelf();
             }
